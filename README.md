@@ -67,7 +67,7 @@ python analysis/summarize.py        # results/summary.json (no GPU)
 python analysis/figures.py          # figures/*.png except attention_*.png (no GPU)
 ```
 
-- **Time:** the sum of per-run training times is 4.7 hours. Runs shared the GPU six at a time, so the per-run times in `metrics.json` include that sharing and are not single-run timings.
+- **Time:** the sum of per-run training times is 4.7 hours. Up to six runs shared the GPU at a time, so the per-run times in `metrics.json` include that sharing and are not single-run timings.
 - **Without a GPU:** checkpoints are not stored, but `summarize.py` and `figures.py` rebuild every summary number and every figure except the three attention maps (`figures/attention_*.png`, which need the checkpoints) from the committed `runs/` and `results/`.
 
 | script | what it measures |

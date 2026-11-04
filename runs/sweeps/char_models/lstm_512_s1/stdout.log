@@ -1,0 +1,75 @@
+[run] /root/char-lm-architectures/runs/sweeps/char_models/lstm_512_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] lstm: 4,236,800 params (4,203,520 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.2931 | lr 1.00e-03 | 98.7k tok/s | 4s
+step    100 | loss 2.3624 | lr 2.00e-03 | 129.8k tok/s | 7s
+step    150 | loss 2.0841 | lr 1.98e-03 | 137.7k tok/s | 10s
+step    200 | loss 1.8935 | lr 1.96e-03 | 124.9k tok/s | 14s
+step    250 | loss 1.7479 | lr 1.93e-03 | 130.8k tok/s | 17s
+  eval step    250 | val_loss 1.8011 | val_bpb 2.5984 | acc 47.1% | 17s
+step    300 | loss 1.6286 | lr 1.90e-03 | 129.7k tok/s | 20s
+step    350 | loss 1.5496 | lr 1.87e-03 | 129.7k tok/s | 23s
+step    400 | loss 1.4813 | lr 1.83e-03 | 109.1k tok/s | 27s
+step    450 | loss 1.4368 | lr 1.79e-03 | 109.3k tok/s | 31s
+step    500 | loss 1.3935 | lr 1.74e-03 | 120.0k tok/s | 34s
+  eval step    500 | val_loss 1.5539 | val_bpb 2.2418 | acc 53.7% | 34s
+step    550 | loss 1.3587 | lr 1.69e-03 | 108.8k tok/s | 38s
+step    600 | loss 1.3334 | lr 1.63e-03 | 112.7k tok/s | 41s
+step    650 | loss 1.3058 | lr 1.57e-03 | 108.8k tok/s | 45s
+step    700 | loss 1.2833 | lr 1.51e-03 | 116.8k tok/s | 49s
+step    750 | loss 1.2680 | lr 1.45e-03 | 112.9k tok/s | 52s
+  eval step    750 | val_loss 1.4921 | val_bpb 2.1527 | acc 55.7% | 52s
+step    800 | loss 1.2486 | lr 1.38e-03 | 109.3k tok/s | 56s
+step    850 | loss 1.2297 | lr 1.31e-03 | 119.4k tok/s | 59s
+step    900 | loss 1.2161 | lr 1.24e-03 | 109.1k tok/s | 63s
+step    950 | loss 1.1956 | lr 1.17e-03 | 110.1k tok/s | 67s
+step   1000 | loss 1.1845 | lr 1.10e-03 | 112.4k tok/s | 71s
+  eval step   1000 | val_loss 1.4735 | val_bpb 2.1258 | acc 56.6% | 71s
+step   1050 | loss 1.1650 | lr 1.03e-03 | 115.7k tok/s | 74s
+step   1100 | loss 1.1522 | lr 9.61e-04 | 112.1k tok/s | 78s
+step   1150 | loss 1.1456 | lr 8.91e-04 | 108.9k tok/s | 81s
+step   1200 | loss 1.1321 | lr 8.23e-04 | 115.2k tok/s | 85s
+step   1250 | loss 1.1208 | lr 7.57e-04 | 114.5k tok/s | 89s
+  eval step   1250 | val_loss 1.4730 | val_bpb 2.1250 | acc 56.9% | 89s
+step   1300 | loss 1.1137 | lr 6.93e-04 | 109.4k tok/s | 92s
+step   1350 | loss 1.1016 | lr 6.31e-04 | 111.7k tok/s | 96s
+step   1400 | loss 1.0936 | lr 5.72e-04 | 133.8k tok/s | 99s
+step   1450 | loss 1.0837 | lr 5.17e-04 | 154.5k tok/s | 102s
+step   1500 | loss 1.0745 | lr 4.65e-04 | 151.4k tok/s | 104s
+  eval step   1500 | val_loss 1.4824 | val_bpb 2.1387 | acc 57.0% | 104s
+step   1550 | loss 1.0676 | lr 4.17e-04 | 142.6k tok/s | 107s
+step   1600 | loss 1.0607 | lr 3.73e-04 | 147.4k tok/s | 110s
+step   1650 | loss 1.0486 | lr 3.33e-04 | 155.2k tok/s | 113s
+step   1700 | loss 1.0491 | lr 2.99e-04 | 165.5k tok/s | 115s
+step   1750 | loss 1.0405 | lr 2.69e-04 | 127.2k tok/s | 118s
+  eval step   1750 | val_loss 1.4962 | val_bpb 2.1586 | acc 56.8% | 118s
+step   1800 | loss 1.0297 | lr 2.44e-04 | 110.9k tok/s | 122s
+step   1850 | loss 1.0267 | lr 2.25e-04 | 114.0k tok/s | 126s
+step   1900 | loss 1.0282 | lr 2.11e-04 | 110.5k tok/s | 129s
+step   1950 | loss 1.0221 | lr 2.03e-04 | 116.6k tok/s | 133s
+step   2000 | loss 1.0228 | lr 2.00e-04 | 136.6k tok/s | 136s
+  eval step   2000 | val_loss 1.5023 | val_bpb 2.1673 | acc 56.9% | 136s
+[final] val_loss 1.5023 | val_bpb 2.1673 | ppl 4.49 | acc 56.87% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+
+DUKE OF YORK:
+What is that thou?
+
+CORIOLANUS:
+O better princes to sleep.
+
+Second Murderer:
+The tradion shall not live a word with her.
+
+LADY ANNE:
+My name is Hereford, do you quiet remember:
+The lord promise my husband would be petterth,
+Unless thou stand'st up: let us go with you.
+What say you that, but keep your grace
+Of the poor grain of your own patrage and
+His violence gives upon him! Looks 
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/char_models/lstm_512_s1/metrics.json

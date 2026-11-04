@@ -1,0 +1,73 @@
+[run] /root/char-lm-architectures/runs/sweeps/char_models_tuned/gpt_modern_s6
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] gpt: 3,162,624 params (3,145,984 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 2.9462 | lr 1.00e-03 | 112.3k tok/s | 4s
+step    100 | loss 2.1766 | lr 2.00e-03 | 114.0k tok/s | 7s
+step    150 | loss 1.8927 | lr 1.98e-03 | 111.9k tok/s | 11s
+step    200 | loss 1.7611 | lr 1.96e-03 | 111.8k tok/s | 15s
+step    250 | loss 1.6764 | lr 1.93e-03 | 115.4k tok/s | 18s
+  eval step    250 | val_loss 1.7683 | val_bpb 2.5511 | acc 47.5% | 18s
+step    300 | loss 1.6203 | lr 1.90e-03 | 122.1k tok/s | 21s
+step    350 | loss 1.5670 | lr 1.87e-03 | 116.3k tok/s | 25s
+step    400 | loss 1.5332 | lr 1.83e-03 | 114.2k tok/s | 29s
+step    450 | loss 1.5019 | lr 1.79e-03 | 114.0k tok/s | 32s
+step    500 | loss 1.4641 | lr 1.74e-03 | 117.0k tok/s | 36s
+  eval step    500 | val_loss 1.6117 | val_bpb 2.3252 | acc 52.1% | 36s
+step    550 | loss 1.4553 | lr 1.69e-03 | 121.0k tok/s | 39s
+step    600 | loss 1.4325 | lr 1.63e-03 | 116.3k tok/s | 43s
+step    650 | loss 1.4118 | lr 1.57e-03 | 114.2k tok/s | 46s
+step    700 | loss 1.3961 | lr 1.51e-03 | 114.1k tok/s | 50s
+step    750 | loss 1.3818 | lr 1.45e-03 | 117.0k tok/s | 53s
+  eval step    750 | val_loss 1.5537 | val_bpb 2.2415 | acc 53.9% | 53s
+step    800 | loss 1.3677 | lr 1.38e-03 | 120.9k tok/s | 57s
+step    850 | loss 1.3540 | lr 1.31e-03 | 116.4k tok/s | 60s
+step    900 | loss 1.3451 | lr 1.24e-03 | 114.1k tok/s | 64s
+step    950 | loss 1.3330 | lr 1.17e-03 | 114.1k tok/s | 67s
+step   1000 | loss 1.3171 | lr 1.10e-03 | 117.1k tok/s | 71s
+  eval step   1000 | val_loss 1.5245 | val_bpb 2.1993 | acc 54.8% | 71s
+step   1050 | loss 1.3085 | lr 1.03e-03 | 120.9k tok/s | 74s
+step   1100 | loss 1.2996 | lr 9.61e-04 | 116.4k tok/s | 78s
+step   1150 | loss 1.2924 | lr 8.91e-04 | 114.2k tok/s | 81s
+step   1200 | loss 1.2774 | lr 8.23e-04 | 114.0k tok/s | 85s
+step   1250 | loss 1.2728 | lr 7.57e-04 | 117.1k tok/s | 88s
+  eval step   1250 | val_loss 1.4905 | val_bpb 2.1504 | acc 56.1% | 88s
+step   1300 | loss 1.2629 | lr 6.93e-04 | 121.0k tok/s | 92s
+step   1350 | loss 1.2541 | lr 6.31e-04 | 116.3k tok/s | 95s
+step   1400 | loss 1.2475 | lr 5.72e-04 | 114.0k tok/s | 99s
+step   1450 | loss 1.2398 | lr 5.17e-04 | 114.0k tok/s | 103s
+step   1500 | loss 1.2345 | lr 4.65e-04 | 123.4k tok/s | 106s
+  eval step   1500 | val_loss 1.4788 | val_bpb 2.1335 | acc 56.7% | 106s
+step   1550 | loss 1.2276 | lr 4.17e-04 | 147.9k tok/s | 109s
+step   1600 | loss 1.2198 | lr 3.73e-04 | 168.5k tok/s | 111s
+step   1650 | loss 1.2179 | lr 3.33e-04 | 173.3k tok/s | 113s
+step   1700 | loss 1.2150 | lr 2.99e-04 | 180.7k tok/s | 116s
+step   1750 | loss 1.2104 | lr 2.69e-04 | 182.9k tok/s | 118s
+  eval step   1750 | val_loss 1.4651 | val_bpb 2.1137 | acc 57.0% | 118s
+step   1800 | loss 1.1996 | lr 2.44e-04 | 207.6k tok/s | 120s
+step   1850 | loss 1.1999 | lr 2.25e-04 | 190.2k tok/s | 122s
+step   1900 | loss 1.1988 | lr 2.11e-04 | 190.1k tok/s | 124s
+step   1950 | loss 1.1898 | lr 2.03e-04 | 190.0k tok/s | 126s
+step   2000 | loss 1.1891 | lr 2.00e-04 | 190.2k tok/s | 128s
+  eval step   2000 | val_loss 1.4683 | val_bpb 2.1184 | acc 57.2% | 128s
+[final] val_loss 1.4683 | val_bpb 2.1184 | ppl 4.34 | acc 57.23% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+Our friendship should be proved,
+Let me be interchange end in the sense:
+That has it shall not pay the subject of steeds?
+
+Third Gentleman:
+Not against it, the comfort of fair secret
+Because love on the day; he's not there heels.
+
+ANGELO:
+I cannot be heard the Capitol, and that will go
+orge the hand in the birds of death: farewell, I
+should make my words cannot approach again they have?
+
+BRUTUS:
+A
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/char_models_tuned/gpt_modern_s6/metrics.json

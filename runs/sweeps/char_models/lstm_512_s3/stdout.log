@@ -1,0 +1,72 @@
+[run] /root/char-lm-architectures/runs/sweeps/char_models/lstm_512_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] lstm: 4,236,800 params (4,203,520 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.2837 | lr 1.00e-03 | 100.9k tok/s | 4s
+step    100 | loss 2.3661 | lr 2.00e-03 | 111.6k tok/s | 8s
+step    150 | loss 2.0798 | lr 1.98e-03 | 114.8k tok/s | 11s
+step    200 | loss 1.8925 | lr 1.96e-03 | 111.7k tok/s | 15s
+step    250 | loss 1.7419 | lr 1.93e-03 | 116.8k tok/s | 18s
+  eval step    250 | val_loss 1.8150 | val_bpb 2.6185 | acc 46.2% | 18s
+step    300 | loss 1.6296 | lr 1.90e-03 | 143.2k tok/s | 21s
+step    350 | loss 1.5518 | lr 1.87e-03 | 185.8k tok/s | 24s
+step    400 | loss 1.4879 | lr 1.83e-03 | 179.2k tok/s | 26s
+step    450 | loss 1.4317 | lr 1.79e-03 | 165.9k tok/s | 28s
+step    500 | loss 1.3937 | lr 1.74e-03 | 160.2k tok/s | 31s
+  eval step    500 | val_loss 1.5469 | val_bpb 2.2316 | acc 54.0% | 31s
+step    550 | loss 1.3517 | lr 1.69e-03 | 180.0k tok/s | 33s
+step    600 | loss 1.3260 | lr 1.63e-03 | 224.1k tok/s | 35s
+step    650 | loss 1.3020 | lr 1.57e-03 | 203.6k tok/s | 37s
+step    700 | loss 1.2784 | lr 1.51e-03 | 147.5k tok/s | 40s
+step    750 | loss 1.2665 | lr 1.45e-03 | 133.0k tok/s | 43s
+  eval step    750 | val_loss 1.4860 | val_bpb 2.1438 | acc 55.8% | 43s
+step    800 | loss 1.2478 | lr 1.38e-03 | 130.5k tok/s | 46s
+step    850 | loss 1.2337 | lr 1.31e-03 | 135.3k tok/s | 49s
+step    900 | loss 1.2124 | lr 1.24e-03 | 149.9k tok/s | 52s
+step    950 | loss 1.2000 | lr 1.17e-03 | 141.8k tok/s | 55s
+step   1000 | loss 1.1810 | lr 1.10e-03 | 119.4k tok/s | 58s
+  eval step   1000 | val_loss 1.4714 | val_bpb 2.1228 | acc 56.8% | 58s
+step   1050 | loss 1.1704 | lr 1.03e-03 | 122.1k tok/s | 61s
+step   1100 | loss 1.1529 | lr 9.61e-04 | 125.4k tok/s | 65s
+step   1150 | loss 1.1385 | lr 8.91e-04 | 122.4k tok/s | 68s
+step   1200 | loss 1.1259 | lr 8.23e-04 | 122.3k tok/s | 71s
+step   1250 | loss 1.1141 | lr 7.57e-04 | 118.7k tok/s | 75s
+  eval step   1250 | val_loss 1.4776 | val_bpb 2.1317 | acc 56.8% | 75s
+step   1300 | loss 1.1118 | lr 6.93e-04 | 122.2k tok/s | 78s
+step   1350 | loss 1.1076 | lr 6.31e-04 | 129.5k tok/s | 81s
+step   1400 | loss 1.0871 | lr 5.72e-04 | 121.8k tok/s | 85s
+step   1450 | loss 1.0825 | lr 5.17e-04 | 118.8k tok/s | 88s
+step   1500 | loss 1.0762 | lr 4.65e-04 | 121.7k tok/s | 91s
+  eval step   1500 | val_loss 1.4900 | val_bpb 2.1496 | acc 56.8% | 92s
+step   1550 | loss 1.0658 | lr 4.17e-04 | 129.9k tok/s | 95s
+step   1600 | loss 1.0611 | lr 3.73e-04 | 119.4k tok/s | 98s
+step   1650 | loss 1.0548 | lr 3.33e-04 | 121.1k tok/s | 101s
+step   1700 | loss 1.0497 | lr 2.99e-04 | 118.4k tok/s | 105s
+step   1750 | loss 1.0413 | lr 2.69e-04 | 123.0k tok/s | 108s
+  eval step   1750 | val_loss 1.4964 | val_bpb 2.1588 | acc 56.7% | 108s
+step   1800 | loss 1.0367 | lr 2.44e-04 | 133.7k tok/s | 111s
+step   1850 | loss 1.0390 | lr 2.25e-04 | 143.6k tok/s | 114s
+step   1900 | loss 1.0324 | lr 2.11e-04 | 138.1k tok/s | 117s
+step   1950 | loss 1.0284 | lr 2.03e-04 | 143.5k tok/s | 120s
+step   2000 | loss 1.0266 | lr 2.00e-04 | 149.0k tok/s | 123s
+  eval step   2000 | val_loss 1.5049 | val_bpb 2.1712 | acc 56.8% | 123s
+[final] val_loss 1.5049 | val_bpb 2.1712 | ppl 4.50 | acc 56.78% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+Your worship in the town, I'll give him war?
+
+Third Citizen:
+All the name till he is generally done; for I have heard
+The proud eyes of sorrow and fire itself.
+
+GLOUCESTER:
+Then dear and heart is love at your highness' lies;
+On whom the day is broke; and with my wrongs
+Lord next way I have said, and his advantage through
+Romeo cannot be contented to report you.
+
+CatesBy:
+A feverance for shame many
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/char_models/lstm_512_s3/metrics.json

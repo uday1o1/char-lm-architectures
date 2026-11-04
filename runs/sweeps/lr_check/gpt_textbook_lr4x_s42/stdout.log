@@ -1,0 +1,71 @@
+[run] /root/char-lm-architectures/runs/sweeps/lr_check/gpt_textbook_lr4x_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] gpt: 3,438,336 params (3,159,552 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 2.8381 | lr 2.00e-03 | 109.7k tok/s | 4s
+step    100 | loss 2.5034 | lr 4.00e-03 | 150.9k tok/s | 6s
+step    150 | loss 2.4685 | lr 3.95e-03 | 192.5k tok/s | 9s
+step    200 | loss 2.3662 | lr 3.91e-03 | 195.2k tok/s | 11s
+step    250 | loss 2.1228 | lr 3.86e-03 | 169.6k tok/s | 13s
+  eval step    250 | val_loss 2.0832 | val_bpb 3.0054 | acc 38.7% | 13s
+step    300 | loss 1.9685 | lr 3.81e-03 | 170.6k tok/s | 15s
+step    350 | loss 1.8615 | lr 3.74e-03 | 172.8k tok/s | 18s
+step    400 | loss 1.7966 | lr 3.66e-03 | 195.9k tok/s | 20s
+step    450 | loss 1.7404 | lr 3.57e-03 | 185.1k tok/s | 22s
+step    500 | loss 1.7118 | lr 3.47e-03 | 154.2k tok/s | 25s
+  eval step    500 | val_loss 1.8162 | val_bpb 2.6202 | acc 46.4% | 25s
+step    550 | loss 1.6800 | lr 3.37e-03 | 131.8k tok/s | 28s
+step    600 | loss 1.6468 | lr 3.26e-03 | 133.4k tok/s | 31s
+step    650 | loss 1.6252 | lr 3.14e-03 | 134.5k tok/s | 34s
+step    700 | loss 1.5989 | lr 3.02e-03 | 131.9k tok/s | 37s
+step    750 | loss 1.5820 | lr 2.89e-03 | 137.3k tok/s | 40s
+  eval step    750 | val_loss 1.7059 | val_bpb 2.4611 | acc 49.5% | 40s
+step    800 | loss 1.5613 | lr 2.76e-03 | 194.0k tok/s | 42s
+step    850 | loss 1.5439 | lr 2.62e-03 | 189.4k tok/s | 44s
+step    900 | loss 1.5300 | lr 2.48e-03 | 177.2k tok/s | 47s
+step    950 | loss 1.5179 | lr 2.34e-03 | 166.9k tok/s | 49s
+step   1000 | loss 1.5075 | lr 2.20e-03 | 165.3k tok/s | 52s
+  eval step   1000 | val_loss 1.6296 | val_bpb 2.3511 | acc 51.6% | 52s
+step   1050 | loss 1.4770 | lr 2.06e-03 | 174.2k tok/s | 54s
+step   1100 | loss 1.4793 | lr 1.92e-03 | 204.8k tok/s | 56s
+step   1150 | loss 1.4659 | lr 1.78e-03 | 194.7k tok/s | 58s
+step   1200 | loss 1.4585 | lr 1.65e-03 | 140.9k tok/s | 61s
+step   1250 | loss 1.4359 | lr 1.51e-03 | 136.5k tok/s | 64s
+  eval step   1250 | val_loss 1.5827 | val_bpb 2.2834 | acc 52.9% | 64s
+step   1300 | loss 1.4318 | lr 1.39e-03 | 136.6k tok/s | 67s
+step   1350 | loss 1.4265 | lr 1.26e-03 | 138.5k tok/s | 70s
+step   1400 | loss 1.4105 | lr 1.14e-03 | 150.9k tok/s | 73s
+step   1450 | loss 1.4017 | lr 1.03e-03 | 136.6k tok/s | 76s
+step   1500 | loss 1.3958 | lr 9.29e-04 | 140.8k tok/s | 79s
+  eval step   1500 | val_loss 1.5438 | val_bpb 2.2273 | acc 54.1% | 79s
+step   1550 | loss 1.3850 | lr 8.33e-04 | 136.6k tok/s | 82s
+step   1600 | loss 1.3811 | lr 7.45e-04 | 138.5k tok/s | 85s
+step   1650 | loss 1.3718 | lr 6.67e-04 | 149.0k tok/s | 87s
+step   1700 | loss 1.3606 | lr 5.97e-04 | 136.5k tok/s | 90s
+step   1750 | loss 1.3588 | lr 5.38e-04 | 136.5k tok/s | 93s
+  eval step   1750 | val_loss 1.5314 | val_bpb 2.2094 | acc 54.8% | 93s
+step   1800 | loss 1.3523 | lr 4.89e-04 | 138.7k tok/s | 96s
+step   1850 | loss 1.3462 | lr 4.50e-04 | 144.8k tok/s | 99s
+step   1900 | loss 1.3434 | lr 4.23e-04 | 170.1k tok/s | 101s
+step   1950 | loss 1.3367 | lr 4.06e-04 | 160.1k tok/s | 104s
+step   2000 | loss 1.3413 | lr 4.00e-04 | 159.6k tok/s | 107s
+  eval step   2000 | val_loss 1.5136 | val_bpb 2.1837 | acc 55.4% | 107s
+[final] val_loss 1.5136 | val_bpb 2.1837 | ppl 4.54 | acc 55.42% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+Mariana set shall be known to jest.
+
+Second Servingman:
+Messenge he ne'er as my out of loving is a point
+in a thing; my heavy of that fast
+at shall arms of his eyes of his less would death.
+
+Second Citizen:
+His have his bloody blessioner spirit,
+and my lords as we will go till be speak. I
+was we well wake him to-night: he is against me; good men
+such am that my brother he hath
+gless out of this so
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/lr_check/gpt_textbook_lr4x_s42/metrics.json

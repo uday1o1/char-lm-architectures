@@ -1,0 +1,70 @@
+[run] /root/char-lm-architectures/runs/sweeps/char_models_tuned/rnn_512_s4
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] rnn: 1,084,928 params (1,051,648 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 2.7809 | lr 2.00e-03 | 144.1k tok/s | 3s
+step    100 | loss 2.2120 | lr 4.00e-03 | 170.7k tok/s | 5s
+step    150 | loss 2.1926 | lr 3.95e-03 | 238.6k tok/s | 7s
+step    200 | loss 2.1341 | lr 3.91e-03 | 171.0k tok/s | 9s
+step    250 | loss 1.9974 | lr 3.86e-03 | 170.0k tok/s | 12s
+  eval step    250 | val_loss 2.0032 | val_bpb 2.8900 | acc 41.4% | 12s
+step    300 | loss 1.8435 | lr 3.81e-03 | 215.8k tok/s | 14s
+step    350 | loss 1.7421 | lr 3.74e-03 | 169.7k tok/s | 16s
+step    400 | loss 1.6805 | lr 3.66e-03 | 169.6k tok/s | 18s
+step    450 | loss 1.6386 | lr 3.57e-03 | 215.7k tok/s | 20s
+step    500 | loss 1.6124 | lr 3.47e-03 | 170.0k tok/s | 23s
+  eval step    500 | val_loss 1.6998 | val_bpb 2.4523 | acc 49.8% | 23s
+step    550 | loss 1.5888 | lr 3.37e-03 | 216.0k tok/s | 25s
+step    600 | loss 1.5681 | lr 3.26e-03 | 170.1k tok/s | 27s
+step    650 | loss 1.5521 | lr 3.14e-03 | 169.4k tok/s | 30s
+step    700 | loss 1.5385 | lr 3.02e-03 | 215.1k tok/s | 31s
+step    750 | loss 1.5269 | lr 2.89e-03 | 170.1k tok/s | 34s
+  eval step    750 | val_loss 1.6353 | val_bpb 2.3592 | acc 51.5% | 34s
+step    800 | loss 1.5109 | lr 2.76e-03 | 170.1k tok/s | 36s
+step    850 | loss 1.4933 | lr 2.62e-03 | 215.4k tok/s | 38s
+step    900 | loss 1.4790 | lr 2.48e-03 | 170.1k tok/s | 41s
+step    950 | loss 1.4707 | lr 2.34e-03 | 172.1k tok/s | 43s
+step   1000 | loss 1.4668 | lr 2.20e-03 | 212.1k tok/s | 45s
+  eval step   1000 | val_loss 1.5799 | val_bpb 2.2794 | acc 53.0% | 45s
+step   1050 | loss 1.4464 | lr 2.06e-03 | 169.5k tok/s | 47s
+step   1100 | loss 1.4345 | lr 1.92e-03 | 250.7k tok/s | 49s
+step   1150 | loss 1.4290 | lr 1.78e-03 | 617.3k tok/s | 50s
+step   1200 | loss 1.4187 | lr 1.65e-03 | 629.2k tok/s | 50s
+step   1250 | loss 1.4058 | lr 1.51e-03 | 561.4k tok/s | 51s
+  eval step   1250 | val_loss 1.5454 | val_bpb 2.2295 | acc 54.1% | 51s
+step   1300 | loss 1.4032 | lr 1.39e-03 | 502.4k tok/s | 52s
+step   1350 | loss 1.3883 | lr 1.26e-03 | 497.3k tok/s | 53s
+step   1400 | loss 1.3801 | lr 1.14e-03 | 552.0k tok/s | 53s
+step   1450 | loss 1.3722 | lr 1.03e-03 | 577.3k tok/s | 54s
+step   1500 | loss 1.3675 | lr 9.29e-04 | 529.0k tok/s | 55s
+  eval step   1500 | val_loss 1.5211 | val_bpb 2.1945 | acc 54.8% | 55s
+step   1550 | loss 1.3598 | lr 8.33e-04 | 619.7k tok/s | 55s
+step   1600 | loss 1.3542 | lr 7.45e-04 | 616.0k tok/s | 56s
+step   1650 | loss 1.3462 | lr 6.67e-04 | 303.6k tok/s | 57s
+step   1700 | loss 1.3441 | lr 5.97e-04 | 168.4k tok/s | 60s
+step   1750 | loss 1.3340 | lr 5.38e-04 | 168.4k tok/s | 62s
+  eval step   1750 | val_loss 1.5050 | val_bpb 2.1712 | acc 55.3% | 62s
+step   1800 | loss 1.3345 | lr 4.89e-04 | 168.4k tok/s | 65s
+step   1850 | loss 1.3305 | lr 4.50e-04 | 168.5k tok/s | 67s
+step   1900 | loss 1.3292 | lr 4.23e-04 | 243.0k tok/s | 69s
+step   1950 | loss 1.3240 | lr 4.06e-04 | 168.4k tok/s | 71s
+step   2000 | loss 1.3241 | lr 4.00e-04 | 168.3k tok/s | 74s
+  eval step   2000 | val_loss 1.5005 | val_bpb 2.1647 | acc 55.3% | 74s
+[final] val_loss 1.5005 | val_bpb 2.1647 | ppl 4.48 | acc 55.31% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+
+SICINIUS:
+O, sir, he would be themselves,
+That we will be, 'tis too half on
+Which matisforth down as the husband
+farge, I say, that should cut by me:
+And orreling Lord nor his anchor and slaves
+Shall such a cause for me, and this land and the duke
+And brat his brother's valiant
+Of my life of thy talies and Hark;
+And then it is fallon of so parting such
+all too lamentle join'd from thy displeasure
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/char_models_tuned/rnn_512_s4/metrics.json

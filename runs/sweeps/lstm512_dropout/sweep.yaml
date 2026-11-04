@@ -1,0 +1,13 @@
+# The 2x512 LSTM of char_models with more dropout (0.1 there). If its late rise in validation
+# loss is overfitting, more dropout should lower its final validation bpb.
+name: lstm512_dropout
+base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/02_char_transformer.yaml
+out_dir: runs
+seeds: [1337, 42, 1, 2, 3]
+common:
+  train.max_steps: 2000
+  train.seq_len: 256
+  train.batch_size: 32
+runs:
+  - {name: lstm_512_drop0.2, overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 512, train.lr: 2e-3, train.weight_decay: 0.0, model.dropout: 0.2}}
+  - {name: lstm_512_drop0.3, overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 512, train.lr: 2e-3, train.weight_decay: 0.0, model.dropout: 0.3}}

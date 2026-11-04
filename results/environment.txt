@@ -1,0 +1,18 @@
+# Environment of the training and analysis runs (recorded on the machine that ran them)
+name, driver_version, memory.total [MiB]
+NVIDIA GeForce RTX 3090, 550.144.03, 24576 MiB
+
+CPU(s):                               24
+Model name:                           AMD Ryzen 9 5900 12-Core Processor
+
+python 3.11.11
+torch 2.6.0+cu124 cuda 12.4 cudnn 90100
+
+nanolm: 8418fc1bae85657190f11749483bf2e729b9702c (clean: yes)
+
+matplotlib==3.11.2
+pandas==3.1.1
+scipy==1.17.1
+sentencepiece==0.2.2
+tabulate==0.10.0
+tiktoken==0.14.0

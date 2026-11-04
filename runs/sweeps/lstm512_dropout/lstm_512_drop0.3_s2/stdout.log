@@ -1,0 +1,71 @@
+[run] /root/char-lm-architectures/runs/sweeps/lstm512_dropout/lstm_512_drop0.3_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] lstm: 4,236,800 params (4,203,520 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.3057 | lr 1.00e-03 | 141.0k tok/s | 3s
+step    100 | loss 2.4126 | lr 2.00e-03 | 164.6k tok/s | 5s
+step    150 | loss 2.1329 | lr 1.98e-03 | 164.8k tok/s | 8s
+step    200 | loss 1.9540 | lr 1.96e-03 | 164.6k tok/s | 10s
+step    250 | loss 1.8115 | lr 1.93e-03 | 164.1k tok/s | 13s
+  eval step    250 | val_loss 1.8413 | val_bpb 2.6564 | acc 45.2% | 13s
+step    300 | loss 1.7047 | lr 1.90e-03 | 164.4k tok/s | 15s
+step    350 | loss 1.6182 | lr 1.87e-03 | 163.6k tok/s | 18s
+step    400 | loss 1.5612 | lr 1.83e-03 | 163.8k tok/s | 20s
+step    450 | loss 1.5064 | lr 1.79e-03 | 164.0k tok/s | 23s
+step    500 | loss 1.4696 | lr 1.74e-03 | 164.0k tok/s | 25s
+  eval step    500 | val_loss 1.5663 | val_bpb 2.2597 | acc 53.5% | 25s
+step    550 | loss 1.4451 | lr 1.69e-03 | 163.6k tok/s | 28s
+step    600 | loss 1.4163 | lr 1.63e-03 | 163.6k tok/s | 30s
+step    650 | loss 1.4041 | lr 1.57e-03 | 163.5k tok/s | 33s
+step    700 | loss 1.3843 | lr 1.51e-03 | 163.5k tok/s | 35s
+step    750 | loss 1.3610 | lr 1.45e-03 | 164.4k tok/s | 38s
+  eval step    750 | val_loss 1.4961 | val_bpb 2.1584 | acc 55.4% | 38s
+step    800 | loss 1.3445 | lr 1.38e-03 | 164.0k tok/s | 40s
+step    850 | loss 1.3267 | lr 1.31e-03 | 163.6k tok/s | 43s
+step    900 | loss 1.3234 | lr 1.24e-03 | 163.6k tok/s | 45s
+step    950 | loss 1.3078 | lr 1.17e-03 | 163.5k tok/s | 48s
+step   1000 | loss 1.2955 | lr 1.10e-03 | 165.2k tok/s | 50s
+  eval step   1000 | val_loss 1.4711 | val_bpb 2.1224 | acc 56.2% | 50s
+step   1050 | loss 1.2930 | lr 1.03e-03 | 163.8k tok/s | 53s
+step   1100 | loss 1.2766 | lr 9.61e-04 | 163.7k tok/s | 55s
+step   1150 | loss 1.2763 | lr 8.91e-04 | 163.6k tok/s | 58s
+step   1200 | loss 1.2656 | lr 8.23e-04 | 163.5k tok/s | 60s
+step   1250 | loss 1.2564 | lr 7.57e-04 | 166.1k tok/s | 63s
+  eval step   1250 | val_loss 1.4451 | val_bpb 2.0848 | acc 56.8% | 63s
+step   1300 | loss 1.2427 | lr 6.93e-04 | 163.2k tok/s | 65s
+step   1350 | loss 1.2387 | lr 6.31e-04 | 163.6k tok/s | 68s
+step   1400 | loss 1.2382 | lr 5.72e-04 | 163.5k tok/s | 70s
+step   1450 | loss 1.2313 | lr 5.17e-04 | 163.5k tok/s | 73s
+step   1500 | loss 1.2349 | lr 4.65e-04 | 167.2k tok/s | 75s
+  eval step   1500 | val_loss 1.4354 | val_bpb 2.0708 | acc 57.2% | 75s
+step   1550 | loss 1.2196 | lr 4.17e-04 | 163.8k tok/s | 78s
+step   1600 | loss 1.2160 | lr 3.73e-04 | 163.5k tok/s | 80s
+step   1650 | loss 1.2152 | lr 3.33e-04 | 163.7k tok/s | 83s
+step   1700 | loss 1.2129 | lr 2.99e-04 | 163.6k tok/s | 85s
+step   1750 | loss 1.2114 | lr 2.69e-04 | 168.2k tok/s | 88s
+  eval step   1750 | val_loss 1.4358 | val_bpb 2.0714 | acc 57.3% | 88s
+step   1800 | loss 1.2014 | lr 2.44e-04 | 163.8k tok/s | 90s
+step   1850 | loss 1.2085 | lr 2.25e-04 | 163.4k tok/s | 93s
+step   1900 | loss 1.2071 | lr 2.11e-04 | 163.4k tok/s | 95s
+step   1950 | loss 1.1973 | lr 2.03e-04 | 163.5k tok/s | 98s
+step   2000 | loss 1.1911 | lr 2.00e-04 | 169.0k tok/s | 100s
+  eval step   2000 | val_loss 1.4367 | val_bpb 2.0727 | acc 57.3% | 100s
+[final] val_loss 1.4367 | val_bpb 2.0727 | ppl 4.21 | acc 57.28% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+
+VOLUMNIA:
+I would not that I have, for an assemble call
+As something strong loves and to be strick.
+
+BRUTUS:
+Ay, must I have us to the second call
+Upon his soul, his reverence they will were
+The feast of all and very found the full of care;
+For whither hath not call'd upon the corse,
+Which you will sorrow for that brothers for
+my soldiers; that is government by this a set
+than be returned with a 
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/lstm512_dropout/lstm_512_drop0.3_s2/metrics.json

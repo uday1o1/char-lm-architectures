@@ -1,0 +1,77 @@
+[run] /root/char-lm-architectures/runs/sweeps/context/lstm_T128_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] lstm: 1,069,824 params (1,053,184 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.5006 | lr 1.00e-03 | 186.3k tok/s | 2s
+step    100 | loss 2.6166 | lr 2.00e-03 | 236.2k tok/s | 4s
+step    150 | loss 2.2387 | lr 1.98e-03 | 237.3k tok/s | 6s
+step    200 | loss 2.0696 | lr 1.96e-03 | 236.6k tok/s | 7s
+step    250 | loss 1.9367 | lr 1.93e-03 | 239.4k tok/s | 9s
+  eval step    250 | val_loss 1.9463 | val_bpb 2.8080 | acc 42.5% | 9s
+step    300 | loss 1.8330 | lr 1.90e-03 | 238.1k tok/s | 11s
+step    350 | loss 1.7555 | lr 1.87e-03 | 234.8k tok/s | 13s
+step    400 | loss 1.6874 | lr 1.83e-03 | 237.2k tok/s | 14s
+step    450 | loss 1.6306 | lr 1.79e-03 | 234.9k tok/s | 16s
+step    500 | loss 1.5886 | lr 1.74e-03 | 238.1k tok/s | 18s
+  eval step    500 | val_loss 1.6909 | val_bpb 2.4394 | acc 49.9% | 18s
+step    550 | loss 1.5534 | lr 1.69e-03 | 237.2k tok/s | 19s
+step    600 | loss 1.5283 | lr 1.63e-03 | 234.7k tok/s | 21s
+step    650 | loss 1.5022 | lr 1.57e-03 | 249.3k tok/s | 23s
+step    700 | loss 1.4787 | lr 1.51e-03 | 242.5k tok/s | 25s
+step    750 | loss 1.4592 | lr 1.45e-03 | 235.2k tok/s | 26s
+  eval step    750 | val_loss 1.5849 | val_bpb 2.2865 | acc 52.9% | 26s
+step    800 | loss 1.4340 | lr 1.38e-03 | 237.6k tok/s | 28s
+step    850 | loss 1.4288 | lr 1.31e-03 | 234.8k tok/s | 30s
+step    900 | loss 1.4062 | lr 1.24e-03 | 235.0k tok/s | 32s
+step    950 | loss 1.4000 | lr 1.17e-03 | 235.5k tok/s | 33s
+step   1000 | loss 1.3891 | lr 1.10e-03 | 236.4k tok/s | 35s
+  eval step   1000 | val_loss 1.5455 | val_bpb 2.2297 | acc 54.3% | 35s
+step   1050 | loss 1.3819 | lr 1.03e-03 | 239.1k tok/s | 37s
+step   1100 | loss 1.3740 | lr 9.61e-04 | 234.5k tok/s | 38s
+step   1150 | loss 1.3693 | lr 8.91e-04 | 234.5k tok/s | 40s
+step   1200 | loss 1.3579 | lr 8.23e-04 | 235.2k tok/s | 42s
+step   1250 | loss 1.3545 | lr 7.57e-04 | 237.4k tok/s | 44s
+  eval step   1250 | val_loss 1.5181 | val_bpb 2.1901 | acc 54.8% | 44s
+step   1300 | loss 1.3466 | lr 6.93e-04 | 258.6k tok/s | 45s
+step   1350 | loss 1.3364 | lr 6.31e-04 | 234.6k tok/s | 47s
+step   1400 | loss 1.3323 | lr 5.72e-04 | 234.6k tok/s | 49s
+step   1450 | loss 1.3349 | lr 5.17e-04 | 235.4k tok/s | 50s
+step   1500 | loss 1.3225 | lr 4.65e-04 | 239.6k tok/s | 52s
+  eval step   1500 | val_loss 1.5093 | val_bpb 2.1775 | acc 55.2% | 52s
+step   1550 | loss 1.3253 | lr 4.17e-04 | 243.5k tok/s | 54s
+step   1600 | loss 1.3214 | lr 3.73e-04 | 234.8k tok/s | 56s
+step   1650 | loss 1.3152 | lr 3.33e-04 | 234.8k tok/s | 57s
+step   1700 | loss 1.3098 | lr 2.99e-04 | 235.8k tok/s | 59s
+step   1750 | loss 1.3097 | lr 2.69e-04 | 238.5k tok/s | 61s
+  eval step   1750 | val_loss 1.4986 | val_bpb 2.1621 | acc 55.5% | 61s
+step   1800 | loss 1.3096 | lr 2.44e-04 | 244.8k tok/s | 62s
+step   1850 | loss 1.3058 | lr 2.25e-04 | 234.6k tok/s | 64s
+step   1900 | loss 1.3021 | lr 2.11e-04 | 236.1k tok/s | 66s
+step   1950 | loss 1.3044 | lr 2.03e-04 | 252.0k tok/s | 68s
+step   2000 | loss 1.3001 | lr 2.00e-04 | 239.5k tok/s | 69s
+  eval step   2000 | val_loss 1.4923 | val_bpb 2.1530 | acc 55.6% | 69s
+[final] val_loss 1.4923 | val_bpb 2.1530 | ppl 4.45 | acc 55.63% | 111,488 tokens, 1.00 bytes/token
+[sample]
+
+That more mock-chase mark you to your brother tears?
+
+HORTENSIO:
+Mistake no mirth; tell him, like me with place, if
+The confellers I can rich doth shame his leasure.
+
+QUEEN MARGARET:
+O Jove, as blame, you ready in Baptaret.
+
+CAMILLO:
+What fall is live.
+
+CLAUDIO:
+All to follow it.
+
+Second Servingman:
+Join's find a way with me her brows and body field
+And fare at over the signion and endmaced
+Looks 
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/context/lstm_T128_s1/metrics.json

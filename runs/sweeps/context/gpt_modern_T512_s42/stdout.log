@@ -1,0 +1,77 @@
+[run] /root/char-lm-architectures/runs/sweeps/context/gpt_modern_T512_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] gpt: 3,162,624 params (3,145,984 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.0787 | lr 5.00e-04 | 91.5k tok/s | 4s
+step    100 | loss 2.3594 | lr 1.00e-03 | 105.1k tok/s | 8s
+step    150 | loss 2.0172 | lr 9.88e-04 | 94.7k tok/s | 13s
+step    200 | loss 1.8237 | lr 9.78e-04 | 94.7k tok/s | 17s
+step    250 | loss 1.7142 | lr 9.66e-04 | 101.6k tok/s | 21s
+  eval step    250 | val_loss 1.7614 | val_bpb 2.5412 | acc 47.6% | 21s
+step    300 | loss 1.6411 | lr 9.51e-04 | 96.1k tok/s | 25s
+step    350 | loss 1.5893 | lr 9.34e-04 | 105.3k tok/s | 29s
+step    400 | loss 1.5545 | lr 9.14e-04 | 94.7k tok/s | 34s
+step    450 | loss 1.5103 | lr 8.93e-04 | 94.7k tok/s | 38s
+step    500 | loss 1.4752 | lr 8.69e-04 | 101.1k tok/s | 42s
+  eval step    500 | val_loss 1.6092 | val_bpb 2.3215 | acc 52.2% | 42s
+step    550 | loss 1.4636 | lr 8.43e-04 | 95.8k tok/s | 46s
+step    600 | loss 1.4243 | lr 8.15e-04 | 105.3k tok/s | 50s
+step    650 | loss 1.4066 | lr 7.86e-04 | 94.7k tok/s | 54s
+step    700 | loss 1.3964 | lr 7.55e-04 | 94.6k tok/s | 59s
+step    750 | loss 1.3832 | lr 7.23e-04 | 99.1k tok/s | 63s
+  eval step    750 | val_loss 1.5474 | val_bpb 2.2324 | acc 54.1% | 63s
+step    800 | loss 1.3635 | lr 6.90e-04 | 95.8k tok/s | 67s
+step    850 | loss 1.3534 | lr 6.56e-04 | 100.7k tok/s | 71s
+step    900 | loss 1.3395 | lr 6.21e-04 | 128.5k tok/s | 74s
+step    950 | loss 1.3274 | lr 5.86e-04 | 131.3k tok/s | 78s
+step   1000 | loss 1.3117 | lr 5.51e-04 | 133.7k tok/s | 81s
+  eval step   1000 | val_loss 1.4977 | val_bpb 2.1607 | acc 55.7% | 81s
+step   1050 | loss 1.3093 | lr 5.15e-04 | 141.3k tok/s | 83s
+step   1100 | loss 1.3005 | lr 4.80e-04 | 139.6k tok/s | 86s
+step   1150 | loss 1.2830 | lr 4.46e-04 | 94.9k tok/s | 91s
+step   1200 | loss 1.2718 | lr 4.12e-04 | 93.7k tok/s | 95s
+step   1250 | loss 1.2601 | lr 3.78e-04 | 94.9k tok/s | 99s
+  eval step   1250 | val_loss 1.4694 | val_bpb 2.1199 | acc 56.4% | 99s
+step   1300 | loss 1.2635 | lr 3.46e-04 | 99.9k tok/s | 104s
+step   1350 | loss 1.2464 | lr 3.15e-04 | 95.8k tok/s | 108s
+step   1400 | loss 1.2443 | lr 2.86e-04 | 94.5k tok/s | 112s
+step   1450 | loss 1.2358 | lr 2.58e-04 | 93.8k tok/s | 116s
+step   1500 | loss 1.2211 | lr 2.32e-04 | 95.0k tok/s | 121s
+  eval step   1500 | val_loss 1.4644 | val_bpb 2.1126 | acc 57.0% | 121s
+step   1550 | loss 1.2237 | lr 2.08e-04 | 99.9k tok/s | 125s
+step   1600 | loss 1.2212 | lr 1.86e-04 | 95.2k tok/s | 129s
+step   1650 | loss 1.2148 | lr 1.67e-04 | 94.5k tok/s | 134s
+step   1700 | loss 1.2031 | lr 1.49e-04 | 93.8k tok/s | 138s
+step   1750 | loss 1.2047 | lr 1.35e-04 | 95.0k tok/s | 142s
+  eval step   1750 | val_loss 1.4475 | val_bpb 2.0883 | acc 57.5% | 142s
+step   1800 | loss 1.2031 | lr 1.22e-04 | 99.4k tok/s | 146s
+step   1850 | loss 1.2032 | lr 1.13e-04 | 95.7k tok/s | 151s
+step   1900 | loss 1.1957 | lr 1.06e-04 | 94.5k tok/s | 155s
+step   1950 | loss 1.1974 | lr 1.01e-04 | 93.8k tok/s | 159s
+step   2000 | loss 1.1943 | lr 1.00e-04 | 103.0k tok/s | 163s
+  eval step   2000 | val_loss 1.4461 | val_bpb 2.0862 | acc 57.6% | 163s
+[final] val_loss 1.4461 | val_bpb 2.0862 | ppl 4.25 | acc 57.61% | 111,104 tokens, 1.00 bytes/token
+[sample]
+
+Mark you, your good lord, so shall attend him
+That save your friends hear your wounds.
+
+Nurse:
+What then? my lord?
+
+Boy:
+Would you she be satisfied?
+
+CLAUDIO:
+Methought you know our persons and learned me past
+of the sight of the people, spring and a wife
+with teeth of your wealths, the meward where the rest.
+
+ISABELLA:
+This against me; good monument come to me,
+We have entreated to lunatic.
+
+ANGE
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/context/gpt_modern_T512_s42/metrics.json

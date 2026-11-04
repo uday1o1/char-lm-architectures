@@ -1,0 +1,17 @@
+# Loss of an (almost) untrained model: the modern 4x256 Transformer after one optimizer step
+# (learning rate 1e-5, the first warmup step), with four tokenizers.
+name: untrained
+base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/02_char_transformer.yaml
+out_dir: runs
+seeds: [1337, 42]
+common:
+  train.max_steps: 1
+  model.norm: rmsnorm
+  model.pos: rope
+  model.mlp: swiglu
+  model.bias: false
+runs:
+  - {name: init_char,     overrides: {data.tokenizer: char}}
+  - {name: init_byte,     overrides: {data.tokenizer: byte}}
+  - {name: init_word2048, overrides: {data.tokenizer: "word:2048"}}
+  - {name: init_gpt2,     overrides: {data.tokenizer: gpt2}}

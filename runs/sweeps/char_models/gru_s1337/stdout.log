@@ -1,0 +1,78 @@
+[run] /root/char-lm-architectures/runs/sweeps/char_models/gru_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] gru: 806,656 params (790,016 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.4245 | lr 1.00e-03 | 143.7k tok/s | 3s
+step    100 | loss 2.5053 | lr 2.00e-03 | 178.8k tok/s | 5s
+step    150 | loss 2.2002 | lr 1.98e-03 | 170.4k tok/s | 8s
+step    200 | loss 2.0534 | lr 1.96e-03 | 170.4k tok/s | 10s
+step    250 | loss 1.9388 | lr 1.93e-03 | 170.7k tok/s | 12s
+  eval step    250 | val_loss 1.9587 | val_bpb 2.8257 | acc 42.1% | 12s
+step    300 | loss 1.8558 | lr 1.90e-03 | 170.3k tok/s | 15s
+step    350 | loss 1.7790 | lr 1.87e-03 | 189.8k tok/s | 17s
+step    400 | loss 1.7237 | lr 1.83e-03 | 199.2k tok/s | 19s
+step    450 | loss 1.6660 | lr 1.79e-03 | 196.9k tok/s | 21s
+step    500 | loss 1.6317 | lr 1.74e-03 | 193.7k tok/s | 23s
+  eval step    500 | val_loss 1.7161 | val_bpb 2.4759 | acc 49.4% | 23s
+step    550 | loss 1.5903 | lr 1.69e-03 | 192.7k tok/s | 25s
+step    600 | loss 1.5678 | lr 1.63e-03 | 190.5k tok/s | 27s
+step    650 | loss 1.5396 | lr 1.57e-03 | 190.8k tok/s | 30s
+step    700 | loss 1.5172 | lr 1.51e-03 | 190.6k tok/s | 32s
+step    750 | loss 1.5074 | lr 1.45e-03 | 203.3k tok/s | 34s
+  eval step    750 | val_loss 1.6058 | val_bpb 2.3167 | acc 52.5% | 34s
+step    800 | loss 1.4842 | lr 1.38e-03 | 204.0k tok/s | 36s
+step    850 | loss 1.4676 | lr 1.31e-03 | 171.8k tok/s | 38s
+step    900 | loss 1.4499 | lr 1.24e-03 | 169.4k tok/s | 41s
+step    950 | loss 1.4439 | lr 1.17e-03 | 169.3k tok/s | 43s
+step   1000 | loss 1.4373 | lr 1.10e-03 | 170.0k tok/s | 45s
+  eval step   1000 | val_loss 1.5557 | val_bpb 2.2443 | acc 53.8% | 45s
+step   1050 | loss 1.4286 | lr 1.03e-03 | 177.7k tok/s | 48s
+step   1100 | loss 1.4136 | lr 9.61e-04 | 171.2k tok/s | 50s
+step   1150 | loss 1.4051 | lr 8.91e-04 | 169.4k tok/s | 53s
+step   1200 | loss 1.4001 | lr 8.23e-04 | 169.4k tok/s | 55s
+step   1250 | loss 1.3951 | lr 7.57e-04 | 170.1k tok/s | 57s
+  eval step   1250 | val_loss 1.5257 | val_bpb 2.2012 | acc 54.7% | 57s
+step   1300 | loss 1.3830 | lr 6.93e-04 | 176.8k tok/s | 60s
+step   1350 | loss 1.3797 | lr 6.31e-04 | 171.1k tok/s | 62s
+step   1400 | loss 1.3764 | lr 5.72e-04 | 169.4k tok/s | 64s
+step   1450 | loss 1.3708 | lr 5.17e-04 | 169.5k tok/s | 67s
+step   1500 | loss 1.3661 | lr 4.65e-04 | 170.0k tok/s | 69s
+  eval step   1500 | val_loss 1.5123 | val_bpb 2.1817 | acc 55.1% | 69s
+step   1550 | loss 1.3628 | lr 4.17e-04 | 177.0k tok/s | 72s
+step   1600 | loss 1.3632 | lr 3.73e-04 | 170.0k tok/s | 74s
+step   1650 | loss 1.3603 | lr 3.33e-04 | 168.5k tok/s | 76s
+step   1700 | loss 1.3520 | lr 2.99e-04 | 168.4k tok/s | 79s
+step   1750 | loss 1.3508 | lr 2.69e-04 | 169.2k tok/s | 81s
+  eval step   1750 | val_loss 1.4987 | val_bpb 2.1622 | acc 55.5% | 81s
+step   1800 | loss 1.3477 | lr 2.44e-04 | 176.2k tok/s | 84s
+step   1850 | loss 1.3413 | lr 2.25e-04 | 169.9k tok/s | 86s
+step   1900 | loss 1.3501 | lr 2.11e-04 | 168.5k tok/s | 88s
+step   1950 | loss 1.3456 | lr 2.03e-04 | 168.5k tok/s | 91s
+step   2000 | loss 1.3378 | lr 2.00e-04 | 169.2k tok/s | 93s
+  eval step   2000 | val_loss 1.4959 | val_bpb 2.1581 | acc 55.5% | 93s
+[final] val_loss 1.4959 | val_bpb 2.1581 | ppl 4.46 | acc 55.48% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+Juliected his bead.
+
+MENENIUS:
+But thou art so much drawn to the glosty wife.
+We have been such as foresience in that
+I fallow to see the eats for this,
+And should have regard the furst. Then say
+you lose their citizens!
+
+LUCIO:
+
+TRONA:
+Then I should apprepare my soldiers shall one.
+
+JULIET:
+Marry, where we would he would soone in her,
+And the may convey'd our wife,--
+
+CAPULET:
+Go, sir, the sensel
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/char_models/gru_s1337/metrics.json

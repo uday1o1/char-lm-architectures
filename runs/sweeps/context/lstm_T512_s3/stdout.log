@@ -1,0 +1,71 @@
+[run] /root/char-lm-architectures/runs/sweeps/context/lstm_T512_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] lstm: 1,069,824 params (1,053,184 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.4997 | lr 1.00e-03 | 73.2k tok/s | 6s
+step    100 | loss 2.6479 | lr 2.00e-03 | 81.6k tok/s | 11s
+step    150 | loss 2.2555 | lr 1.98e-03 | 81.6k tok/s | 16s
+step    200 | loss 2.0741 | lr 1.96e-03 | 83.5k tok/s | 21s
+step    250 | loss 1.9443 | lr 1.93e-03 | 87.5k tok/s | 25s
+  eval step    250 | val_loss 1.9420 | val_bpb 2.8018 | acc 42.5% | 25s
+step    300 | loss 1.8386 | lr 1.90e-03 | 81.5k tok/s | 30s
+step    350 | loss 1.7598 | lr 1.87e-03 | 81.2k tok/s | 35s
+step    400 | loss 1.6962 | lr 1.83e-03 | 81.2k tok/s | 40s
+step    450 | loss 1.6293 | lr 1.79e-03 | 82.8k tok/s | 45s
+step    500 | loss 1.5857 | lr 1.74e-03 | 87.6k tok/s | 50s
+  eval step    500 | val_loss 1.7044 | val_bpb 2.4589 | acc 50.0% | 50s
+step    550 | loss 1.5483 | lr 1.69e-03 | 81.2k tok/s | 55s
+step    600 | loss 1.5118 | lr 1.63e-03 | 81.2k tok/s | 60s
+step    650 | loss 1.4885 | lr 1.57e-03 | 81.0k tok/s | 65s
+step    700 | loss 1.4661 | lr 1.51e-03 | 82.8k tok/s | 70s
+step    750 | loss 1.4499 | lr 1.45e-03 | 87.5k tok/s | 75s
+  eval step    750 | val_loss 1.5643 | val_bpb 2.2568 | acc 53.4% | 75s
+step    800 | loss 1.4260 | lr 1.38e-03 | 81.0k tok/s | 80s
+step    850 | loss 1.4091 | lr 1.31e-03 | 81.0k tok/s | 85s
+step    900 | loss 1.3982 | lr 1.24e-03 | 81.0k tok/s | 90s
+step    950 | loss 1.3844 | lr 1.17e-03 | 106.4k tok/s | 94s
+step   1000 | loss 1.3832 | lr 1.10e-03 | 120.8k tok/s | 97s
+  eval step   1000 | val_loss 1.5226 | val_bpb 2.1966 | acc 54.6% | 97s
+step   1050 | loss 1.3614 | lr 1.03e-03 | 105.4k tok/s | 101s
+step   1100 | loss 1.3498 | lr 9.61e-04 | 106.2k tok/s | 105s
+step   1150 | loss 1.3454 | lr 8.91e-04 | 122.4k tok/s | 108s
+step   1200 | loss 1.3340 | lr 8.23e-04 | 89.3k tok/s | 113s
+step   1250 | loss 1.3338 | lr 7.57e-04 | 89.5k tok/s | 117s
+  eval step   1250 | val_loss 1.4937 | val_bpb 2.1549 | acc 55.5% | 117s
+step   1300 | loss 1.3243 | lr 6.93e-04 | 82.8k tok/s | 122s
+step   1350 | loss 1.3187 | lr 6.31e-04 | 82.9k tok/s | 127s
+step   1400 | loss 1.3121 | lr 5.72e-04 | 92.9k tok/s | 132s
+step   1450 | loss 1.3090 | lr 5.17e-04 | 86.9k tok/s | 136s
+step   1500 | loss 1.3138 | lr 4.65e-04 | 88.7k tok/s | 141s
+  eval step   1500 | val_loss 1.4859 | val_bpb 2.1436 | acc 55.7% | 141s
+step   1550 | loss 1.3002 | lr 4.17e-04 | 82.3k tok/s | 146s
+step   1600 | loss 1.2999 | lr 3.73e-04 | 82.2k tok/s | 151s
+step   1650 | loss 1.3065 | lr 3.33e-04 | 93.8k tok/s | 155s
+step   1700 | loss 1.3016 | lr 2.99e-04 | 83.7k tok/s | 160s
+step   1750 | loss 1.2872 | lr 2.69e-04 | 88.7k tok/s | 165s
+  eval step   1750 | val_loss 1.4780 | val_bpb 2.1324 | acc 56.1% | 165s
+step   1800 | loss 1.2852 | lr 2.44e-04 | 82.4k tok/s | 170s
+step   1850 | loss 1.2878 | lr 2.25e-04 | 82.1k tok/s | 175s
+step   1900 | loss 1.2846 | lr 2.11e-04 | 96.2k tok/s | 179s
+step   1950 | loss 1.2933 | lr 2.03e-04 | 82.8k tok/s | 184s
+step   2000 | loss 1.2805 | lr 2.00e-04 | 94.2k tok/s | 188s
+  eval step   2000 | val_loss 1.4716 | val_bpb 2.1230 | acc 56.3% | 188s
+[final] val_loss 1.4716 | val_bpb 2.1230 | ppl 4.36 | acc 56.31% | 111,104 tokens, 1.00 bytes/token
+[sample]
+
+Your way to say 'Here is enemies? when
+I shall be but my reasons.
+
+First Stilliam:
+And well, come thou both me and Bamnardine,
+And there do see the dooms visit to old
+And creep advirant fortune fell on his
+time to me as ill send to come to miser:
+We'll bear some army tender was to high,
+And so have show'd the blame of his own,
+To cut up an inteed of that day of my
+law to the vowar:
+And therefore i
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/context/lstm_T512_s3/metrics.json

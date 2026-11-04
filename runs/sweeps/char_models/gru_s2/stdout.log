@@ -1,0 +1,69 @@
+[run] /root/char-lm-architectures/runs/sweeps/char_models/gru_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] gru: 806,656 params (790,016 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.4124 | lr 1.00e-03 | 202.4k tok/s | 2s
+step    100 | loss 2.4832 | lr 2.00e-03 | 208.7k tok/s | 4s
+step    150 | loss 2.1923 | lr 1.98e-03 | 169.5k tok/s | 6s
+step    200 | loss 2.0452 | lr 1.96e-03 | 169.5k tok/s | 9s
+step    250 | loss 1.9342 | lr 1.93e-03 | 182.0k tok/s | 11s
+  eval step    250 | val_loss 1.9403 | val_bpb 2.7992 | acc 42.5% | 11s
+step    300 | loss 1.8462 | lr 1.90e-03 | 200.1k tok/s | 13s
+step    350 | loss 1.7742 | lr 1.87e-03 | 223.8k tok/s | 15s
+step    400 | loss 1.7160 | lr 1.83e-03 | 193.2k tok/s | 17s
+step    450 | loss 1.6598 | lr 1.79e-03 | 191.2k tok/s | 19s
+step    500 | loss 1.6185 | lr 1.74e-03 | 189.3k tok/s | 21s
+  eval step    500 | val_loss 1.7095 | val_bpb 2.4664 | acc 49.7% | 21s
+step    550 | loss 1.5917 | lr 1.69e-03 | 193.3k tok/s | 23s
+step    600 | loss 1.5599 | lr 1.63e-03 | 214.7k tok/s | 25s
+step    650 | loss 1.5429 | lr 1.57e-03 | 213.9k tok/s | 27s
+step    700 | loss 1.5198 | lr 1.51e-03 | 179.2k tok/s | 30s
+step    750 | loss 1.4981 | lr 1.45e-03 | 169.6k tok/s | 32s
+  eval step    750 | val_loss 1.6118 | val_bpb 2.3254 | acc 52.3% | 32s
+step    800 | loss 1.4784 | lr 1.38e-03 | 169.4k tok/s | 34s
+step    850 | loss 1.4607 | lr 1.31e-03 | 169.4k tok/s | 37s
+step    900 | loss 1.4576 | lr 1.24e-03 | 185.7k tok/s | 39s
+step    950 | loss 1.4416 | lr 1.17e-03 | 178.0k tok/s | 41s
+step   1000 | loss 1.4281 | lr 1.10e-03 | 168.7k tok/s | 44s
+  eval step   1000 | val_loss 1.5613 | val_bpb 2.2525 | acc 53.5% | 44s
+step   1050 | loss 1.4234 | lr 1.03e-03 | 170.6k tok/s | 46s
+step   1100 | loss 1.4098 | lr 9.61e-04 | 168.6k tok/s | 49s
+step   1150 | loss 1.4098 | lr 8.91e-04 | 185.7k tok/s | 51s
+step   1200 | loss 1.4001 | lr 8.23e-04 | 176.6k tok/s | 53s
+step   1250 | loss 1.3867 | lr 7.57e-04 | 169.2k tok/s | 56s
+  eval step   1250 | val_loss 1.5317 | val_bpb 2.2097 | acc 54.5% | 56s
+step   1300 | loss 1.3763 | lr 6.93e-04 | 169.9k tok/s | 58s
+step   1350 | loss 1.3752 | lr 6.31e-04 | 168.6k tok/s | 60s
+step   1400 | loss 1.3753 | lr 5.72e-04 | 179.9k tok/s | 63s
+step   1450 | loss 1.3655 | lr 5.17e-04 | 175.9k tok/s | 65s
+step   1500 | loss 1.3733 | lr 4.65e-04 | 174.7k tok/s | 67s
+  eval step   1500 | val_loss 1.5111 | val_bpb 2.1801 | acc 54.9% | 67s
+step   1550 | loss 1.3554 | lr 4.17e-04 | 170.6k tok/s | 70s
+step   1600 | loss 1.3542 | lr 3.73e-04 | 168.4k tok/s | 72s
+step   1650 | loss 1.3512 | lr 3.33e-04 | 169.1k tok/s | 75s
+step   1700 | loss 1.3518 | lr 2.99e-04 | 185.5k tok/s | 77s
+step   1750 | loss 1.3512 | lr 2.69e-04 | 177.0k tok/s | 79s
+  eval step   1750 | val_loss 1.5023 | val_bpb 2.1673 | acc 55.3% | 79s
+step   1800 | loss 1.3421 | lr 2.44e-04 | 169.8k tok/s | 82s
+step   1850 | loss 1.3491 | lr 2.25e-04 | 169.3k tok/s | 84s
+step   1900 | loss 1.3492 | lr 2.11e-04 | 168.6k tok/s | 86s
+step   1950 | loss 1.3403 | lr 2.03e-04 | 185.7k tok/s | 89s
+step   2000 | loss 1.3338 | lr 2.00e-04 | 176.8k tok/s | 91s
+  eval step   2000 | val_loss 1.5002 | val_bpb 2.1643 | acc 55.4% | 91s
+[final] val_loss 1.5002 | val_bpb 2.1643 | ppl 4.48 | acc 55.40% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+Here in the commons of this king of joy
+And stand became the sentence should loves me
+And these prince as whom I provoked revenge
+Your king of days of mine own.
+
+LADY ANNE:
+Do my lord; for I have fearful too!
+Had I will be much a form of them chance say another
+That you that so much things his mind of solout,
+We are too shate; or heaven more than he is
+a common of ball of breath should many eep-wo
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/char_models/gru_s2/metrics.json

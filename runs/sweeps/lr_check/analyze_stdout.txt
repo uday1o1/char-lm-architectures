@@ -1,0 +1,36 @@
+
+metric = val_bpb  (lower is better)
+
+                     n_seeds  val_bpb_mean  val_bpb_std  params_M  train_min
+name                                                                        
+gpt_modern_lr0.5x          2        2.1133       0.0011    3.1626     2.5869
+gpt_modern_lr2x            2        2.1046       0.0180    3.1626     2.0202
+gpt_modern_lr4x            2        2.1319       0.0035    3.1626     2.5502
+gpt_modern_lr8x            2        2.1614       0.0002    3.1626     1.5601
+gpt_textbook_lr0.5x        2        2.3924       0.0008    3.4383     1.9587
+gpt_textbook_lr2x          2        2.1502       0.0078    3.4383     1.8070
+gpt_textbook_lr4x          2        2.1915       0.0111    3.4383     1.7816
+gpt_textbook_lr8x          2        2.2613       0.0022    3.4383     1.8874
+gru_lr0.5x                 2        2.3331       0.0060    0.8067     1.4629
+gru_lr2x                   2        2.1211       0.0118    0.8067     1.3249
+gru_lr4x                   2        2.1167       0.0090    0.8067     1.4728
+lstm_512_lr0.25x           2        2.3090       0.0095    4.2368     2.1716
+lstm_512_lr0.5x            2        2.1324       0.0079    4.2368     2.1698
+lstm_512_lr2x              2        2.3744       0.0146    4.2368     2.1693
+lstm_lr0.5x                2        2.2878       0.0046    1.0698     1.5643
+lstm_lr16x                 2        2.1491       0.0028    1.0698     0.5632
+lstm_lr2x                  2        2.1033       0.0053    1.0698     1.5712
+lstm_lr4x                  2        2.1170       0.0058    1.0698     1.4180
+lstm_lr8x                  2        2.0987       0.0036    1.0698     1.5833
+rnn_512_lr0.5x             2        2.6186       0.0164    1.0849     1.3026
+rnn_512_lr2x               2        2.1570       0.0071    1.0849     1.4563
+rnn_512_lr4x               2        2.6996       0.6529    1.0849     1.2543
+rnn_512_lr8x               2        2.5886       0.1558    1.0849     1.4739
+rnn_lr0.5x                 2        2.9159       0.0085    0.2803     0.7925
+rnn_lr2x                   2        2.2679       0.0056    0.2803     0.8089
+rnn_lr4x                   2        2.2518       0.0046    0.2803     0.8234
+rnn_lr8x                   2        2.4386       0.0083    0.2803     0.8211
+
+seed noise floor: median within-experiment std = 0.0071 bpb (differences below ~2x this are not trustworthy without more seeds)
+
+wrote runs/sweeps/lr_check/summary.csv, summary.md, curves.png, bars.png

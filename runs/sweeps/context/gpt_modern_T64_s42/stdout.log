@@ -1,0 +1,71 @@
+[run] /root/char-lm-architectures/runs/sweeps/context/gpt_modern_T64_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] gpt: 3,162,624 params (3,145,984 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.0960 | lr 5.00e-04 | 82.6k tok/s | 5s
+step    100 | loss 2.2271 | lr 1.00e-03 | 101.4k tok/s | 9s
+step    150 | loss 1.8925 | lr 9.88e-04 | 95.8k tok/s | 13s
+step    200 | loss 1.7442 | lr 9.78e-04 | 92.7k tok/s | 18s
+step    250 | loss 1.6551 | lr 9.66e-04 | 92.8k tok/s | 22s
+  eval step    250 | val_loss 1.7519 | val_bpb 2.5274 | acc 48.7% | 22s
+step    300 | loss 1.6001 | lr 9.51e-04 | 92.7k tok/s | 27s
+step    350 | loss 1.5651 | lr 9.34e-04 | 100.6k tok/s | 31s
+step    400 | loss 1.5299 | lr 9.14e-04 | 96.3k tok/s | 35s
+step    450 | loss 1.5025 | lr 8.93e-04 | 92.5k tok/s | 39s
+step    500 | loss 1.4787 | lr 8.69e-04 | 92.7k tok/s | 44s
+  eval step    500 | val_loss 1.6272 | val_bpb 2.3475 | acc 52.0% | 44s
+step    550 | loss 1.4637 | lr 8.43e-04 | 92.4k tok/s | 48s
+step    600 | loss 1.4429 | lr 8.15e-04 | 100.8k tok/s | 52s
+step    650 | loss 1.4310 | lr 7.86e-04 | 96.4k tok/s | 56s
+step    700 | loss 1.4171 | lr 7.55e-04 | 92.6k tok/s | 61s
+step    750 | loss 1.4012 | lr 7.23e-04 | 92.6k tok/s | 65s
+  eval step    750 | val_loss 1.5661 | val_bpb 2.2594 | acc 53.6% | 65s
+step    800 | loss 1.3911 | lr 6.90e-04 | 92.6k tok/s | 70s
+step    850 | loss 1.3802 | lr 6.56e-04 | 104.5k tok/s | 74s
+step    900 | loss 1.3686 | lr 6.21e-04 | 156.8k tok/s | 76s
+step    950 | loss 1.3648 | lr 5.86e-04 | 207.2k tok/s | 78s
+step   1000 | loss 1.3536 | lr 5.51e-04 | 183.9k tok/s | 80s
+  eval step   1000 | val_loss 1.5455 | val_bpb 2.2297 | acc 54.2% | 80s
+step   1050 | loss 1.3481 | lr 5.15e-04 | 182.3k tok/s | 83s
+step   1100 | loss 1.3384 | lr 4.80e-04 | 285.7k tok/s | 84s
+step   1150 | loss 1.3271 | lr 4.46e-04 | 242.7k tok/s | 86s
+step   1200 | loss 1.3278 | lr 4.12e-04 | 145.9k tok/s | 89s
+step   1250 | loss 1.3114 | lr 3.78e-04 | 96.1k tok/s | 93s
+  eval step   1250 | val_loss 1.5171 | val_bpb 2.1888 | acc 55.2% | 93s
+step   1300 | loss 1.3112 | lr 3.46e-04 | 95.9k tok/s | 97s
+step   1350 | loss 1.2988 | lr 3.15e-04 | 95.9k tok/s | 101s
+step   1400 | loss 1.2922 | lr 2.86e-04 | 105.3k tok/s | 105s
+step   1450 | loss 1.2920 | lr 2.58e-04 | 119.5k tok/s | 109s
+step   1500 | loss 1.2832 | lr 2.32e-04 | 96.0k tok/s | 113s
+  eval step   1500 | val_loss 1.5113 | val_bpb 2.1803 | acc 55.7% | 113s
+step   1550 | loss 1.2799 | lr 2.08e-04 | 96.0k tok/s | 117s
+step   1600 | loss 1.2772 | lr 1.86e-04 | 96.0k tok/s | 122s
+step   1650 | loss 1.2764 | lr 1.67e-04 | 109.3k tok/s | 125s
+step   1700 | loss 1.2685 | lr 1.49e-04 | 112.8k tok/s | 129s
+step   1750 | loss 1.2640 | lr 1.35e-04 | 96.1k tok/s | 133s
+  eval step   1750 | val_loss 1.4933 | val_bpb 2.1544 | acc 55.8% | 133s
+step   1800 | loss 1.2603 | lr 1.22e-04 | 96.1k tok/s | 137s
+step   1850 | loss 1.2568 | lr 1.13e-04 | 96.0k tok/s | 142s
+step   1900 | loss 1.2553 | lr 1.06e-04 | 116.9k tok/s | 145s
+step   1950 | loss 1.2563 | lr 1.01e-04 | 105.8k tok/s | 149s
+step   2000 | loss 1.2513 | lr 1.00e-04 | 96.1k tok/s | 153s
+  eval step   2000 | val_loss 1.4937 | val_bpb 2.1550 | acc 56.1% | 153s
+[final] val_loss 1.4937 | val_bpb 2.1550 | ppl 4.45 | acc 56.08% | 111,488 tokens, 1.00 bytes/token
+[sample]
+
+Marry me, your grace.
+
+ANGELO:
+Respected the while says he were destruction am wounds.
+
+NORTHUMBERLAND:
+I do protest myself my life, I have too base
+Then all the enter, sparks; would this shame of this
+prophecy, you can be contented to respect him:
+And the deathest good Romeo is but the measure
+For the crown of despair of a fatal victory,
+They never will not so blest to entreat thee wretch,
+That w
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/context/gpt_modern_T64_s42/metrics.json

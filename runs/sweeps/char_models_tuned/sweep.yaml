@@ -1,0 +1,26 @@
+# The char_models comparison with each architecture at its best learning rate from lr_check
+# (lowest mean val_bpb over seeds 1337 and 42; diverged runs excluded), on five fresh seeds that
+# played no part in choosing it. Only the learning rate differs from char_models.
+name: char_models_tuned
+base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/02_char_transformer.yaml
+out_dir: runs
+seeds: [4, 5, 6, 7, 8]
+common:
+  train.max_steps: 2000
+  train.seq_len: 256
+  train.batch_size: 32
+runs:
+  - name: rnn            # 4x
+    overrides: {model.arch: rnn, model.n_layers: 2, model.dim: 256, train.lr: 8e-3, train.weight_decay: 0.0}
+  - name: rnn_512        # 2x
+    overrides: {model.arch: rnn, model.n_layers: 2, model.dim: 512, train.lr: 4e-3, train.weight_decay: 0.0}
+  - name: gru            # 4x
+    overrides: {model.arch: gru, model.n_layers: 2, model.dim: 256, train.lr: 8e-3, train.weight_decay: 0.0}
+  - name: lstm           # 8x
+    overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 1.6e-2, train.weight_decay: 0.0}
+  - name: lstm_512       # 0.5x
+    overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 512, train.lr: 1e-3, train.weight_decay: 0.0}
+  - name: gpt_textbook   # 2x
+    overrides: {train.lr: 2e-3}
+  - name: gpt_modern     # 2x
+    overrides: {model.norm: rmsnorm, model.pos: rope, model.mlp: swiglu, model.bias: false, train.lr: 2e-3}

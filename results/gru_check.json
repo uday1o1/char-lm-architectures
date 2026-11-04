@@ -1,0 +1,20 @@
+{
+ "fp64": {
+  "max_abs_output": 3.608224830031759e-16,
+  "max_abs_final_state": 4.440892098500626e-16,
+  "max_abs_input_grad": 5.551115123125783e-16,
+  "output_scale": 0.5080704616131282
+ },
+ "fp32": {
+  "max_abs_output": 1.1920928955078125e-07,
+  "max_abs_final_state": 1.7881393432617188e-07,
+  "max_abs_input_grad": 1.9371509552001953e-07,
+  "output_scale": 0.5508052110671997
+ },
+ "fp64_reset_before_product": {
+  "max_abs_output": 0.08568751603289568,
+  "max_abs_final_state": 0.10963114584215576,
+  "max_abs_input_grad": 0.07923704232807047,
+  "output_scale": 0.5080704616131282
+ }
+}

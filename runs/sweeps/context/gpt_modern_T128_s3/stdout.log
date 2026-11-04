@@ -1,0 +1,77 @@
+[run] /root/char-lm-architectures/runs/sweeps/context/gpt_modern_T128_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] gpt: 3,162,624 params (3,145,984 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.0939 | lr 5.00e-04 | 117.6k tok/s | 3s
+step    100 | loss 2.2604 | lr 1.00e-03 | 106.5k tok/s | 7s
+step    150 | loss 1.9136 | lr 9.88e-04 | 99.1k tok/s | 11s
+step    200 | loss 1.7513 | lr 9.78e-04 | 94.7k tok/s | 16s
+step    250 | loss 1.6607 | lr 9.66e-04 | 94.7k tok/s | 20s
+  eval step    250 | val_loss 1.7384 | val_bpb 2.5080 | acc 48.7% | 20s
+step    300 | loss 1.5891 | lr 9.51e-04 | 96.8k tok/s | 24s
+step    350 | loss 1.5475 | lr 9.34e-04 | 101.4k tok/s | 28s
+step    400 | loss 1.5198 | lr 9.14e-04 | 98.7k tok/s | 33s
+step    450 | loss 1.4825 | lr 8.93e-04 | 94.6k tok/s | 37s
+step    500 | loss 1.4589 | lr 8.69e-04 | 95.9k tok/s | 41s
+  eval step    500 | val_loss 1.6080 | val_bpb 2.3198 | acc 52.7% | 41s
+step    550 | loss 1.4461 | lr 8.43e-04 | 97.1k tok/s | 45s
+step    600 | loss 1.4274 | lr 8.15e-04 | 100.6k tok/s | 49s
+step    650 | loss 1.4092 | lr 7.86e-04 | 98.7k tok/s | 54s
+step    700 | loss 1.4056 | lr 7.55e-04 | 94.7k tok/s | 58s
+step    750 | loss 1.3825 | lr 7.23e-04 | 95.9k tok/s | 62s
+  eval step    750 | val_loss 1.5460 | val_bpb 2.2304 | acc 54.4% | 62s
+step    800 | loss 1.3698 | lr 6.90e-04 | 95.8k tok/s | 66s
+step    850 | loss 1.3542 | lr 6.56e-04 | 100.6k tok/s | 71s
+step    900 | loss 1.3501 | lr 6.21e-04 | 128.5k tok/s | 74s
+step    950 | loss 1.3369 | lr 5.86e-04 | 131.3k tok/s | 77s
+step   1000 | loss 1.3282 | lr 5.51e-04 | 133.7k tok/s | 80s
+  eval step   1000 | val_loss 1.5192 | val_bpb 2.1917 | acc 55.2% | 80s
+step   1050 | loss 1.3156 | lr 5.15e-04 | 137.3k tok/s | 83s
+step   1100 | loss 1.3086 | lr 4.80e-04 | 124.2k tok/s | 86s
+step   1150 | loss 1.3028 | lr 4.46e-04 | 93.8k tok/s | 91s
+step   1200 | loss 1.2942 | lr 4.12e-04 | 93.8k tok/s | 95s
+step   1250 | loss 1.2831 | lr 3.78e-04 | 96.0k tok/s | 99s
+  eval step   1250 | val_loss 1.4975 | val_bpb 2.1604 | acc 55.9% | 99s
+step   1300 | loss 1.2754 | lr 3.46e-04 | 94.2k tok/s | 104s
+step   1350 | loss 1.2742 | lr 3.15e-04 | 96.7k tok/s | 108s
+step   1400 | loss 1.2614 | lr 2.86e-04 | 93.8k tok/s | 112s
+step   1450 | loss 1.2572 | lr 2.58e-04 | 95.0k tok/s | 116s
+step   1500 | loss 1.2510 | lr 2.32e-04 | 94.9k tok/s | 121s
+  eval step   1500 | val_loss 1.4866 | val_bpb 2.1448 | acc 56.3% | 121s
+step   1550 | loss 1.2501 | lr 2.08e-04 | 93.7k tok/s | 125s
+step   1600 | loss 1.2411 | lr 1.86e-04 | 96.1k tok/s | 129s
+step   1650 | loss 1.2375 | lr 1.67e-04 | 93.7k tok/s | 134s
+step   1700 | loss 1.2345 | lr 1.49e-04 | 95.0k tok/s | 138s
+step   1750 | loss 1.2302 | lr 1.35e-04 | 96.0k tok/s | 142s
+  eval step   1750 | val_loss 1.4758 | val_bpb 2.1292 | acc 56.8% | 142s
+step   1800 | loss 1.2262 | lr 1.22e-04 | 95.9k tok/s | 147s
+step   1850 | loss 1.2237 | lr 1.13e-04 | 93.8k tok/s | 151s
+step   1900 | loss 1.2228 | lr 1.06e-04 | 93.8k tok/s | 155s
+step   1950 | loss 1.2196 | lr 1.01e-04 | 103.9k tok/s | 159s
+step   2000 | loss 1.2158 | lr 1.00e-04 | 137.7k tok/s | 162s
+  eval step   2000 | val_loss 1.4787 | val_bpb 2.1333 | acc 56.8% | 162s
+[final] val_loss 1.4787 | val_bpb 2.1333 | ppl 4.39 | acc 56.82% | 111,488 tokens, 1.00 bytes/token
+[sample]
+
+Your worship is the worlder of the child.
+
+KING RICHARD III:
+All the father with his grace once entertain.
+
+BRUTUS:
+See, you were the people?
+
+BRUTUS:
+I do some mercy.
+
+COMINIUS:
+Three words of your death's an iron
+That will not knock to change my lady
+To strange rebellion and like a lender down.
+
+Third Citizen:
+But which you so scarf is our woes and wars
+Without all extremes and the duke: and he 
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/context/gpt_modern_T128_s3/metrics.json

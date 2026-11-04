@@ -1,0 +1,70 @@
+[run] /root/char-lm-architectures/runs/sweeps/lr_check/lstm_lr4x_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] lstm: 1,069,824 params (1,053,184 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.1928 | lr 4.00e-03 | 129.5k tok/s | 3s
+step    100 | loss 2.2630 | lr 8.00e-03 | 164.1k tok/s | 6s
+step    150 | loss 1.8761 | lr 7.90e-03 | 183.1k tok/s | 8s
+step    200 | loss 1.6472 | lr 7.83e-03 | 190.2k tok/s | 10s
+step    250 | loss 1.5318 | lr 7.73e-03 | 210.2k tok/s | 12s
+  eval step    250 | val_loss 1.6659 | val_bpb 2.4034 | acc 51.0% | 12s
+step    300 | loss 1.4709 | lr 7.61e-03 | 397.1k tok/s | 13s
+step    350 | loss 1.4184 | lr 7.47e-03 | 347.3k tok/s | 14s
+step    400 | loss 1.3922 | lr 7.32e-03 | 310.5k tok/s | 16s
+step    450 | loss 1.3567 | lr 7.14e-03 | 304.2k tok/s | 17s
+step    500 | loss 1.3449 | lr 6.95e-03 | 305.7k tok/s | 18s
+  eval step    500 | val_loss 1.5153 | val_bpb 2.1861 | acc 55.0% | 18s
+step    550 | loss 1.3184 | lr 6.74e-03 | 307.2k tok/s | 20s
+step    600 | loss 1.3081 | lr 6.52e-03 | 390.2k tok/s | 21s
+step    650 | loss 1.2941 | lr 6.29e-03 | 484.1k tok/s | 21s
+step    700 | loss 1.2792 | lr 6.04e-03 | 460.0k tok/s | 22s
+step    750 | loss 1.2773 | lr 5.78e-03 | 478.4k tok/s | 23s
+  eval step    750 | val_loss 1.4842 | val_bpb 2.1412 | acc 56.0% | 23s
+step    800 | loss 1.2621 | lr 5.52e-03 | 184.0k tok/s | 25s
+step    850 | loss 1.2484 | lr 5.25e-03 | 158.2k tok/s | 28s
+step    900 | loss 1.2381 | lr 4.97e-03 | 157.8k tok/s | 31s
+step    950 | loss 1.2312 | lr 4.69e-03 | 161.1k tok/s | 33s
+step   1000 | loss 1.2279 | lr 4.41e-03 | 161.8k tok/s | 36s
+  eval step   1000 | val_loss 1.4724 | val_bpb 2.1243 | acc 56.3% | 36s
+step   1050 | loss 1.2210 | lr 4.12e-03 | 166.6k tok/s | 38s
+step   1100 | loss 1.2052 | lr 3.84e-03 | 158.1k tok/s | 41s
+step   1150 | loss 1.1972 | lr 3.57e-03 | 173.7k tok/s | 43s
+step   1200 | loss 1.1942 | lr 3.29e-03 | 161.1k tok/s | 46s
+step   1250 | loss 1.1864 | lr 3.03e-03 | 161.5k tok/s | 48s
+  eval step   1250 | val_loss 1.4654 | val_bpb 2.1142 | acc 56.9% | 48s
+step   1300 | loss 1.1791 | lr 2.77e-03 | 165.9k tok/s | 51s
+step   1350 | loss 1.1729 | lr 2.52e-03 | 158.0k tok/s | 53s
+step   1400 | loss 1.1688 | lr 2.29e-03 | 158.0k tok/s | 56s
+step   1450 | loss 1.1592 | lr 2.07e-03 | 160.7k tok/s | 58s
+step   1500 | loss 1.1545 | lr 1.86e-03 | 176.3k tok/s | 61s
+  eval step   1500 | val_loss 1.4737 | val_bpb 2.1260 | acc 57.1% | 61s
+step   1550 | loss 1.1507 | lr 1.67e-03 | 165.8k tok/s | 63s
+step   1600 | loss 1.1509 | lr 1.49e-03 | 157.6k tok/s | 66s
+step   1650 | loss 1.1432 | lr 1.33e-03 | 158.0k tok/s | 68s
+step   1700 | loss 1.1383 | lr 1.19e-03 | 161.1k tok/s | 71s
+step   1750 | loss 1.1339 | lr 1.08e-03 | 161.6k tok/s | 73s
+  eval step   1750 | val_loss 1.4630 | val_bpb 2.1107 | acc 57.1% | 73s
+step   1800 | loss 1.1315 | lr 9.78e-04 | 166.7k tok/s | 76s
+step   1850 | loss 1.1239 | lr 9.01e-04 | 170.1k tok/s | 78s
+step   1900 | loss 1.1302 | lr 8.45e-04 | 157.9k tok/s | 81s
+step   1950 | loss 1.1249 | lr 8.12e-04 | 160.8k tok/s | 83s
+step   2000 | loss 1.1180 | lr 8.00e-04 | 161.7k tok/s | 86s
+  eval step   2000 | val_loss 1.4703 | val_bpb 2.1211 | acc 57.2% | 86s
+[final] val_loss 1.4703 | val_bpb 2.1211 | ppl 4.35 | acc 57.18% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+And live that bear their sorrow and a fool,
+And then a right to change the means to do it.
+
+EXETER:
+God send a man along, and cross you to the form.
+
+DUKE OF AUMERLE:
+I do well advise me and so say away.
+What is it, plaughters to that Angelo is to my own
+infancy. Prithee, go, we are all, and serving her more
+Than we will be thy words against my country's head,
+Upon a man that with all blood servic
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/lr_check/lstm_lr4x_s1337/metrics.json

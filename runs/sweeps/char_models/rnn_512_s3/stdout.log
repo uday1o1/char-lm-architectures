@@ -1,0 +1,70 @@
+[run] /root/char-lm-architectures/runs/sweeps/char_models/rnn_512_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] rnn: 1,084,928 params (1,051,648 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 2.9014 | lr 1.00e-03 | 145.7k tok/s | 3s
+step    100 | loss 2.2080 | lr 2.00e-03 | 178.6k tok/s | 5s
+step    150 | loss 2.1578 | lr 1.98e-03 | 170.4k tok/s | 8s
+step    200 | loss 2.1284 | lr 1.96e-03 | 170.4k tok/s | 10s
+step    250 | loss 2.1102 | lr 1.93e-03 | 169.6k tok/s | 12s
+  eval step    250 | val_loss 2.1959 | val_bpb 3.1680 | acc 36.3% | 12s
+step    300 | loss 2.0857 | lr 1.90e-03 | 170.9k tok/s | 15s
+step    350 | loss 2.0657 | lr 1.87e-03 | 189.3k tok/s | 17s
+step    400 | loss 2.0207 | lr 1.83e-03 | 199.3k tok/s | 19s
+step    450 | loss 1.9573 | lr 1.79e-03 | 196.1k tok/s | 21s
+step    500 | loss 1.9038 | lr 1.74e-03 | 193.5k tok/s | 23s
+  eval step    500 | val_loss 1.9389 | val_bpb 2.7973 | acc 43.1% | 23s
+step    550 | loss 1.8310 | lr 1.69e-03 | 192.4k tok/s | 25s
+step    600 | loss 1.7784 | lr 1.63e-03 | 190.6k tok/s | 27s
+step    650 | loss 1.7258 | lr 1.57e-03 | 190.7k tok/s | 30s
+step    700 | loss 1.6755 | lr 1.51e-03 | 190.7k tok/s | 32s
+step    750 | loss 1.6508 | lr 1.45e-03 | 203.5k tok/s | 34s
+  eval step    750 | val_loss 1.7394 | val_bpb 2.5095 | acc 48.8% | 34s
+step    800 | loss 1.6181 | lr 1.38e-03 | 202.6k tok/s | 36s
+step    850 | loss 1.5958 | lr 1.31e-03 | 171.5k tok/s | 38s
+step    900 | loss 1.5694 | lr 1.24e-03 | 169.4k tok/s | 41s
+step    950 | loss 1.5595 | lr 1.17e-03 | 169.4k tok/s | 43s
+step   1000 | loss 1.5345 | lr 1.10e-03 | 170.1k tok/s | 45s
+  eval step   1000 | val_loss 1.6427 | val_bpb 2.3700 | acc 51.4% | 45s
+step   1050 | loss 1.5233 | lr 1.03e-03 | 177.8k tok/s | 48s
+step   1100 | loss 1.5045 | lr 9.61e-04 | 170.9k tok/s | 50s
+step   1150 | loss 1.4919 | lr 8.91e-04 | 169.5k tok/s | 53s
+step   1200 | loss 1.4781 | lr 8.23e-04 | 169.4k tok/s | 55s
+step   1250 | loss 1.4672 | lr 7.57e-04 | 170.3k tok/s | 57s
+  eval step   1250 | val_loss 1.5951 | val_bpb 2.3012 | acc 52.8% | 57s
+step   1300 | loss 1.4673 | lr 6.93e-04 | 177.0k tok/s | 60s
+step   1350 | loss 1.4615 | lr 6.31e-04 | 170.8k tok/s | 62s
+step   1400 | loss 1.4423 | lr 5.72e-04 | 169.5k tok/s | 64s
+step   1450 | loss 1.4463 | lr 5.17e-04 | 169.5k tok/s | 67s
+step   1500 | loss 1.4386 | lr 4.65e-04 | 170.1k tok/s | 69s
+  eval step   1500 | val_loss 1.5636 | val_bpb 2.2558 | acc 53.4% | 69s
+step   1550 | loss 1.4345 | lr 4.17e-04 | 177.3k tok/s | 72s
+step   1600 | loss 1.4227 | lr 3.73e-04 | 169.8k tok/s | 74s
+step   1650 | loss 1.4181 | lr 3.33e-04 | 168.5k tok/s | 76s
+step   1700 | loss 1.4164 | lr 2.99e-04 | 168.4k tok/s | 79s
+step   1750 | loss 1.4090 | lr 2.69e-04 | 169.3k tok/s | 81s
+  eval step   1750 | val_loss 1.5447 | val_bpb 2.2286 | acc 54.0% | 81s
+step   1800 | loss 1.4050 | lr 2.44e-04 | 176.3k tok/s | 84s
+step   1850 | loss 1.4115 | lr 2.25e-04 | 169.8k tok/s | 86s
+step   1900 | loss 1.4028 | lr 2.11e-04 | 168.5k tok/s | 88s
+step   1950 | loss 1.4023 | lr 2.03e-04 | 168.6k tok/s | 91s
+step   2000 | loss 1.4019 | lr 2.00e-04 | 169.4k tok/s | 93s
+  eval step   2000 | val_loss 1.5376 | val_bpb 2.2184 | acc 54.2% | 93s
+[final] val_loss 1.5376 | val_bpb 2.2184 | ppl 4.65 | acc 54.22% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+Your wock and she is bolder overt of father?
+
+DUKE VINCENTIO:
+Speak not their face of bleadon, which the brunt
+Cantome of Rome, hath appear his kingdom
+I vas, as dolth his head, deserves here:
+For thou hast in my men of with and king, but not;
+Thy ever bear some arms
+Upon my daughter's dagger,
+But that the fribur sight of you, of curse you,
+You have not speak of many war to me, and well:
+I cannot 
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/char_models/rnn_512_s3/metrics.json

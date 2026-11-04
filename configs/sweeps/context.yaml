@@ -1,0 +1,16 @@
+# Context length for the 2x256 LSTM and the modern Transformer. Tokens per step stay at 8192
+# (batch_size = 8192 / seq_len), so every run sees the same 16.4M characters. seq_len 256 is
+# the char_models run of the same name (identical config) and is not repeated here.
+name: context
+base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/02_char_transformer.yaml
+out_dir: runs
+seeds: [1337, 42, 1, 2, 3]
+common:
+  train.max_steps: 2000
+runs:
+  - {name: lstm_T64,  overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 2e-3, train.weight_decay: 0.0, train.seq_len: 64,  train.batch_size: 128}}
+  - {name: lstm_T128, overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 2e-3, train.weight_decay: 0.0, train.seq_len: 128, train.batch_size: 64}}
+  - {name: lstm_T512, overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 2e-3, train.weight_decay: 0.0, train.seq_len: 512, train.batch_size: 16}}
+  - {name: gpt_modern_T64,  overrides: {model.norm: rmsnorm, model.pos: rope, model.mlp: swiglu, model.bias: false, train.seq_len: 64,  train.batch_size: 128}}
+  - {name: gpt_modern_T128, overrides: {model.norm: rmsnorm, model.pos: rope, model.mlp: swiglu, model.bias: false, train.seq_len: 128, train.batch_size: 64}}
+  - {name: gpt_modern_T512, overrides: {model.norm: rmsnorm, model.pos: rope, model.mlp: swiglu, model.bias: false, train.seq_len: 512, train.batch_size: 16}}

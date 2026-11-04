@@ -1,0 +1,20 @@
+{
+ "name": "rnn_512",
+ "seed": 7,
+ "date": "2026-11-04T19:12:08",
+ "git": {
+  "commit": "8418fc1bae85657190f11749483bf2e729b9702c",
+  "branch": "HEAD",
+  "dirty": false
+ },
+ "host": "641f55fbb4ae",
+ "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.35",
+ "python": "3.11.11",
+ "torch": "2.6.0+cu124",
+ "device": "cuda (precision=bfloat16, compile=yes)",
+ "world_size": 1,
+ "command": "/root/char-lm-architectures/external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/train.py --config /root/char-lm-architectures/external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/02_char_transformer.yaml train.max_steps=2000 train.seq_len=256 train.batch_size=32 model.arch=\"rnn\" model.n_layers=2 model.dim=512 train.lr=\"4e-3\" train.weight_decay=0.0 name=rnn_512 seed=7 run_dir=/root/char-lm-architectures/runs/sweeps/char_models_tuned/rnn_512_s7 tags=[\"char_models_tuned\"]",
+ "tags": [
+  "char_models_tuned"
+ ]
+}

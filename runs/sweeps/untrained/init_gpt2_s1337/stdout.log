@@ -1,0 +1,12 @@
+[run] /root/char-lm-architectures/runs/sweeps/untrained/init_gpt2_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] wrote data/nanolm/tinyshakespeare_gpt2_tail100: 301,966 train / 36,059 val tokens (vocab 50257)
+[data] tinyshakespeare_gpt2_tail100 | tokenizer=gpt2 vocab=50257 | train 301,966 tok | val 36,059 tok
+[model] gpt: 16,011,776 params (3,145,984 non-embedding)
+[train] 1 steps x 8,192 tokens/step (0.03 passes over train) | optimizer=adamw schedule=cosine
+  eval step      1 | val_loss 10.7926 | val_bpb 5.0353 | acc 2.6% | 0s
+[final] val_loss 10.7926 | val_bpb 5.0353 | ppl 48660.08 | acc 2.57% | 35,840 tokens, 3.09 bytes/token
+[sample]
+<|endoftext|> Pete MKnce ===== console recadayadayadaytern Abedin Abedin Interestinglyoldemort plaster mess messKnown Templ Templ Templ ammoncence magnetExample comprehens ballpark declNic constitu iconic Genernce constitu constitu adopting gadgetSD notably@@@@ Mean starsKnown consequ bloom laun TRANS Amenikh TRANS methods Ahead CLE CLE boyfriend', Mew employers exponential TRANSExample Florence Percentage sendojure Aheadchartspecial sendoneliness audio Sound Cary unreliable unreliablewheel PreferencesReddit comprehens', Percentage Percentage@@@@ oustRah Dent ISS Sept Montgomery THEM Nothing g
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/untrained/init_gpt2_s1337/metrics.json

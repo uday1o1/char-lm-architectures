@@ -1,0 +1,72 @@
+[run] /root/char-lm-architectures/runs/sweeps/char_models/gru_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] gru: 806,656 params (790,016 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.4314 | lr 1.00e-03 | 206.6k tok/s | 2s
+step    100 | loss 2.4906 | lr 2.00e-03 | 210.1k tok/s | 4s
+step    150 | loss 2.1948 | lr 1.98e-03 | 169.4k tok/s | 6s
+step    200 | loss 2.0486 | lr 1.96e-03 | 168.7k tok/s | 9s
+step    250 | loss 1.9371 | lr 1.93e-03 | 181.0k tok/s | 11s
+  eval step    250 | val_loss 1.9541 | val_bpb 2.8191 | acc 42.3% | 11s
+step    300 | loss 1.8453 | lr 1.90e-03 | 201.2k tok/s | 13s
+step    350 | loss 1.7820 | lr 1.87e-03 | 223.7k tok/s | 15s
+step    400 | loss 1.7218 | lr 1.83e-03 | 193.1k tok/s | 17s
+step    450 | loss 1.6696 | lr 1.79e-03 | 191.1k tok/s | 19s
+step    500 | loss 1.6319 | lr 1.74e-03 | 189.2k tok/s | 21s
+  eval step    500 | val_loss 1.7062 | val_bpb 2.4615 | acc 49.7% | 21s
+step    550 | loss 1.5894 | lr 1.69e-03 | 193.3k tok/s | 23s
+step    600 | loss 1.5649 | lr 1.63e-03 | 214.1k tok/s | 25s
+step    650 | loss 1.5392 | lr 1.57e-03 | 214.4k tok/s | 27s
+step    700 | loss 1.5138 | lr 1.51e-03 | 179.8k tok/s | 30s
+step    750 | loss 1.5052 | lr 1.45e-03 | 168.6k tok/s | 32s
+  eval step    750 | val_loss 1.6092 | val_bpb 2.3216 | acc 52.3% | 32s
+step    800 | loss 1.4877 | lr 1.38e-03 | 169.8k tok/s | 34s
+step    850 | loss 1.4762 | lr 1.31e-03 | 169.5k tok/s | 37s
+step    900 | loss 1.4581 | lr 1.24e-03 | 185.7k tok/s | 39s
+step    950 | loss 1.4534 | lr 1.17e-03 | 178.0k tok/s | 41s
+step   1000 | loss 1.4350 | lr 1.10e-03 | 168.6k tok/s | 44s
+  eval step   1000 | val_loss 1.5554 | val_bpb 2.2439 | acc 53.8% | 44s
+step   1050 | loss 1.4299 | lr 1.03e-03 | 171.1k tok/s | 46s
+step   1100 | loss 1.4161 | lr 9.61e-04 | 168.5k tok/s | 49s
+step   1150 | loss 1.4054 | lr 8.91e-04 | 185.7k tok/s | 51s
+step   1200 | loss 1.3970 | lr 8.23e-04 | 176.1k tok/s | 53s
+step   1250 | loss 1.3866 | lr 7.57e-04 | 169.6k tok/s | 56s
+  eval step   1250 | val_loss 1.5331 | val_bpb 2.2118 | acc 54.5% | 56s
+step   1300 | loss 1.3904 | lr 6.93e-04 | 170.3k tok/s | 58s
+step   1350 | loss 1.3886 | lr 6.31e-04 | 168.7k tok/s | 60s
+step   1400 | loss 1.3691 | lr 5.72e-04 | 179.4k tok/s | 63s
+step   1450 | loss 1.3758 | lr 5.17e-04 | 176.0k tok/s | 65s
+step   1500 | loss 1.3737 | lr 4.65e-04 | 174.9k tok/s | 67s
+  eval step   1500 | val_loss 1.5115 | val_bpb 2.1807 | acc 55.2% | 67s
+step   1550 | loss 1.3677 | lr 4.17e-04 | 170.2k tok/s | 70s
+step   1600 | loss 1.3590 | lr 3.73e-04 | 168.2k tok/s | 72s
+step   1650 | loss 1.3575 | lr 3.33e-04 | 169.3k tok/s | 75s
+step   1700 | loss 1.3591 | lr 2.99e-04 | 185.5k tok/s | 77s
+step   1750 | loss 1.3538 | lr 2.69e-04 | 177.7k tok/s | 79s
+  eval step   1750 | val_loss 1.5000 | val_bpb 2.1640 | acc 55.3% | 79s
+step   1800 | loss 1.3491 | lr 2.44e-04 | 170.3k tok/s | 81s
+step   1850 | loss 1.3560 | lr 2.25e-04 | 169.3k tok/s | 84s
+step   1900 | loss 1.3484 | lr 2.11e-04 | 168.5k tok/s | 86s
+step   1950 | loss 1.3503 | lr 2.03e-04 | 185.8k tok/s | 89s
+step   2000 | loss 1.3474 | lr 2.00e-04 | 176.6k tok/s | 91s
+  eval step   2000 | val_loss 1.4971 | val_bpb 2.1598 | acc 55.5% | 91s
+[final] val_loss 1.4971 | val_bpb 2.1598 | ppl 4.47 | acc 55.45% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+Your wock and strive be mere virtuous towards.
+
+ISABELLA:
+What should a while, he is generally death.
+Though that that we do be endured to seek out
+I have been suddlen putch'd by their souls
+Is deliver'd your horse; for with all king,
+
+DUKE VINCENTIO:
+I said 'twere be enough and remember which had as flower his rest.
+
+GLOUCESTER:
+One lightly weep of noble and our all.
+But, for that we was a sweet 
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/char_models/gru_s3/metrics.json

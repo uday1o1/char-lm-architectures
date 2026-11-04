@@ -1,0 +1,40 @@
+# Learning-rate check: every char_models architecture across a grid of multiples of its
+# learning rate (0.5x to 8x; 0.25x to 2x for the 2x512 LSTM; up to 16x for the 2x256 LSTM, whose best
+# 2-seed value was at 8x), so that every best value lies inside the grid.
+name: lr_check
+base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/02_char_transformer.yaml
+out_dir: runs
+seeds: [1337, 42]
+common:
+  train.max_steps: 2000
+  train.seq_len: 256
+  train.batch_size: 32
+runs:
+  - {name: rnn_lr0.5x, overrides: {model.arch: rnn, model.n_layers: 2, model.dim: 256, train.lr: 1e-3, train.weight_decay: 0.0}}
+  - {name: rnn_lr2x, overrides: {model.arch: rnn, model.n_layers: 2, model.dim: 256, train.lr: 4e-3, train.weight_decay: 0.0}}
+  - {name: rnn_512_lr0.5x, overrides: {model.arch: rnn, model.n_layers: 2, model.dim: 512, train.lr: 1e-3, train.weight_decay: 0.0}}
+  - {name: rnn_512_lr2x, overrides: {model.arch: rnn, model.n_layers: 2, model.dim: 512, train.lr: 4e-3, train.weight_decay: 0.0}}
+  - {name: gru_lr0.5x, overrides: {model.arch: gru, model.n_layers: 2, model.dim: 256, train.lr: 1e-3, train.weight_decay: 0.0}}
+  - {name: gru_lr2x, overrides: {model.arch: gru, model.n_layers: 2, model.dim: 256, train.lr: 4e-3, train.weight_decay: 0.0}}
+  - {name: lstm_lr0.5x, overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 1e-3, train.weight_decay: 0.0}}
+  - {name: lstm_lr2x, overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 4e-3, train.weight_decay: 0.0}}
+  - {name: lstm_512_lr0.5x, overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 512, train.lr: 1e-3, train.weight_decay: 0.0}}
+  - {name: lstm_512_lr2x, overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 512, train.lr: 4e-3, train.weight_decay: 0.0}}
+  - {name: gpt_textbook_lr0.5x, overrides: {train.lr: 5e-4}}
+  - {name: gpt_modern_lr0.5x, overrides: {model.norm: rmsnorm, model.pos: rope, model.mlp: swiglu, model.bias: false, train.lr: 5e-4}}
+  - {name: gpt_textbook_lr2x, overrides: {train.lr: 2e-3}}
+  - {name: gpt_modern_lr2x, overrides: {model.norm: rmsnorm, model.pos: rope, model.mlp: swiglu, model.bias: false, train.lr: 2e-3}}
+  - {name: rnn_lr4x, overrides: {model.arch: rnn, model.n_layers: 2, model.dim: 256, train.lr: 8e-3, train.weight_decay: 0.0}}
+  - {name: rnn_lr8x, overrides: {model.arch: rnn, model.n_layers: 2, model.dim: 256, train.lr: 1.6e-2, train.weight_decay: 0.0}}
+  - {name: rnn_512_lr4x, overrides: {model.arch: rnn, model.n_layers: 2, model.dim: 512, train.lr: 8e-3, train.weight_decay: 0.0}}
+  - {name: rnn_512_lr8x, overrides: {model.arch: rnn, model.n_layers: 2, model.dim: 512, train.lr: 1.6e-2, train.weight_decay: 0.0}}
+  - {name: gru_lr4x, overrides: {model.arch: gru, model.n_layers: 2, model.dim: 256, train.lr: 8e-3, train.weight_decay: 0.0}}
+  - {name: gru_lr8x, overrides: {model.arch: gru, model.n_layers: 2, model.dim: 256, train.lr: 1.6e-2, train.weight_decay: 0.0}}
+  - {name: lstm_lr4x, overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 8e-3, train.weight_decay: 0.0}}
+  - {name: lstm_lr8x, overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 1.6e-2, train.weight_decay: 0.0}}
+  - {name: lstm_512_lr0.25x, overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 512, train.lr: 5e-4, train.weight_decay: 0.0}}
+  - {name: gpt_textbook_lr4x, overrides: {train.lr: 4e-3}}
+  - {name: gpt_modern_lr4x, overrides: {model.norm: rmsnorm, model.pos: rope, model.mlp: swiglu, model.bias: false, train.lr: 4e-3}}
+  - {name: gpt_textbook_lr8x, overrides: {train.lr: 8e-3}}
+  - {name: gpt_modern_lr8x, overrides: {model.norm: rmsnorm, model.pos: rope, model.mlp: swiglu, model.bias: false, train.lr: 8e-3}}
+  - {name: lstm_lr16x, overrides: {model.arch: lstm, model.n_layers: 2, model.dim: 256, train.lr: 3.2e-2, train.weight_decay: 0.0}}

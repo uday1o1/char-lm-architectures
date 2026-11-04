@@ -1,0 +1,15 @@
+
+metric = val_bpb  (lower is better)
+
+                 n_seeds  val_bpb_mean  val_bpb_std  params_M  train_min
+name                                                                    
+gpt_modern_T128        5        2.1191       0.0093    3.1626     2.5937
+gpt_modern_T512        5        2.0923       0.0087    3.1626     2.3807
+gpt_modern_T64         5        2.1563       0.0071    3.1626     2.6092
+lstm_T128              5        2.1525       0.0075    1.0698     1.0975
+lstm_T512              5        2.1259       0.0027    1.0698     3.0619
+lstm_T64               5        2.1804       0.0090    1.0698     0.8849
+
+seed noise floor: median within-experiment std = 0.0081 bpb (differences below ~2x this are not trustworthy without more seeds)
+
+wrote runs/sweeps/context/summary.csv, summary.md, curves.png, bars.png

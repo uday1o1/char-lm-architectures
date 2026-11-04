@@ -1,0 +1,67 @@
+[run] /root/char-lm-architectures/runs/sweeps/lr_check/lstm_512_lr0.25x_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] lstm: 4,236,800 params (4,203,520 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.5745 | lr 2.50e-04 | 95.4k tok/s | 4s
+step    100 | loss 2.8106 | lr 5.00e-04 | 110.0k tok/s | 8s
+step    150 | loss 2.3635 | lr 4.94e-04 | 113.7k tok/s | 12s
+step    200 | loss 2.2266 | lr 4.89e-04 | 122.2k tok/s | 15s
+step    250 | loss 2.1375 | lr 4.83e-04 | 110.5k tok/s | 19s
+  eval step    250 | val_loss 2.1174 | val_bpb 3.0547 | acc 37.9% | 19s
+step    300 | loss 2.0763 | lr 4.76e-04 | 110.7k tok/s | 22s
+step    350 | loss 2.0116 | lr 4.67e-04 | 119.0k tok/s | 26s
+step    400 | loss 1.9696 | lr 4.57e-04 | 114.4k tok/s | 29s
+step    450 | loss 1.9200 | lr 4.46e-04 | 109.8k tok/s | 33s
+step    500 | loss 1.8826 | lr 4.34e-04 | 114.6k tok/s | 37s
+  eval step    500 | val_loss 1.9358 | val_bpb 2.7928 | acc 42.5% | 37s
+step    550 | loss 1.8430 | lr 4.21e-04 | 120.7k tok/s | 40s
+step    600 | loss 1.8105 | lr 4.08e-04 | 110.0k tok/s | 44s
+step    650 | loss 1.7748 | lr 3.93e-04 | 109.8k tok/s | 48s
+step    700 | loss 1.7460 | lr 3.77e-04 | 113.9k tok/s | 51s
+step    750 | loss 1.7196 | lr 3.61e-04 | 122.1k tok/s | 55s
+  eval step    750 | val_loss 1.8142 | val_bpb 2.6174 | acc 46.3% | 55s
+step    800 | loss 1.6876 | lr 3.45e-04 | 109.8k tok/s | 58s
+step    850 | loss 1.6597 | lr 3.28e-04 | 113.4k tok/s | 62s
+step    900 | loss 1.6331 | lr 3.11e-04 | 126.5k tok/s | 65s
+step    950 | loss 1.6199 | lr 2.93e-04 | 128.5k tok/s | 68s
+step   1000 | loss 1.6067 | lr 2.75e-04 | 128.8k tok/s | 71s
+  eval step   1000 | val_loss 1.7210 | val_bpb 2.4828 | acc 49.2% | 71s
+step   1050 | loss 1.5930 | lr 2.58e-04 | 146.5k tok/s | 74s
+step   1100 | loss 1.5715 | lr 2.40e-04 | 158.5k tok/s | 77s
+step   1150 | loss 1.5561 | lr 2.23e-04 | 148.4k tok/s | 80s
+step   1200 | loss 1.5445 | lr 2.06e-04 | 153.5k tok/s | 82s
+step   1250 | loss 1.5375 | lr 1.89e-04 | 152.6k tok/s | 85s
+  eval step   1250 | val_loss 1.6643 | val_bpb 2.4010 | acc 50.9% | 85s
+step   1300 | loss 1.5204 | lr 1.73e-04 | 132.9k tok/s | 88s
+step   1350 | loss 1.5135 | lr 1.58e-04 | 130.9k tok/s | 91s
+step   1400 | loss 1.5060 | lr 1.43e-04 | 113.1k tok/s | 95s
+step   1450 | loss 1.4987 | lr 1.29e-04 | 153.0k tok/s | 97s
+step   1500 | loss 1.4912 | lr 1.16e-04 | 164.6k tok/s | 100s
+  eval step   1500 | val_loss 1.6357 | val_bpb 2.3598 | acc 51.8% | 100s
+step   1550 | loss 1.4866 | lr 1.04e-04 | 149.7k tok/s | 103s
+step   1600 | loss 1.4857 | lr 9.32e-05 | 153.0k tok/s | 105s
+step   1650 | loss 1.4803 | lr 8.33e-05 | 151.2k tok/s | 108s
+step   1700 | loss 1.4685 | lr 7.47e-05 | 171.1k tok/s | 110s
+step   1750 | loss 1.4660 | lr 6.73e-05 | 156.2k tok/s | 113s
+  eval step   1750 | val_loss 1.6144 | val_bpb 2.3291 | acc 52.3% | 113s
+step   1800 | loss 1.4634 | lr 6.11e-05 | 117.4k tok/s | 117s
+step   1850 | loss 1.4574 | lr 5.63e-05 | 114.1k tok/s | 120s
+step   1900 | loss 1.4644 | lr 5.28e-05 | 117.3k tok/s | 124s
+step   1950 | loss 1.4574 | lr 5.07e-05 | 114.1k tok/s | 127s
+step   2000 | loss 1.4522 | lr 5.00e-05 | 121.3k tok/s | 131s
+  eval step   2000 | val_loss 1.6051 | val_bpb 2.3157 | acc 52.5% | 131s
+[final] val_loss 1.6051 | val_bpb 2.3157 | ppl 4.98 | acc 52.50% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+Juliect of quices, Chargio, which you more prove
+Your armation that you with her his foul of her
+had bestended the heaven and crown astage at the conso,
+I come here you are to the furst. Then say
+Our loss madied; and by the puppite and two majastly
+Take in their love; and so my lord I sen,
+And so well gone my light, which so your die,
+Where no may coundess purchies and courage
+To believe the sing 
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/lr_check/lstm_512_lr0.25x_s1337/metrics.json

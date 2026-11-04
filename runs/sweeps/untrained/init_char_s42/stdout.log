@@ -1,0 +1,14 @@
+[run] /root/char-lm-architectures/runs/sweeps/untrained/init_char_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] downloading Tiny Shakespeare -> data/nanolm/raw/tinyshakespeare.txt
+[data] wrote data/nanolm/tinyshakespeare_char_tail100: 1,003,854 train / 111,540 val tokens (vocab 65)
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] gpt: 3,162,624 params (3,145,984 non-embedding)
+[train] 1 steps x 8,192 tokens/step (0.01 passes over train) | optimizer=adamw schedule=cosine
+  eval step      1 | val_loss 4.1760 | val_bpb 6.0248 | acc 2.7% | 1s
+[final] val_loss 4.1760 | val_bpb 6.0248 | ppl 65.11 | acc 2.71% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+M''G&ddWubbkkTl?L-;;lkNZ-ipMluPRRRK&PxWKkkhBBuw?DDws3xxEM!;XZPGGUhhYnCMa:CCv;mmDoDpzzzllNQiRPGGrG?WAAsPiZZZZDDDDZZl;;mmsewoomcPlTX&&GeAC?KK'3xW33sQFaBBtTUjPPYgMeeeWssssssssskk;  ooossMMMkkqqWNr33kkk'PjLLCLppppkMhhGrz&ss3&&&xwc!bblpss!!!D's?ullu3aaLiRDGwXx;;;;!FFwtttu,&JgRv?iXDDDD xppppm;ZZjP:OOjdDtPqtCzSr??Ntttt'''OOLm 333zPPaGmmmviize$$,ZBBBBBnussss3cmERRH-NDN3?mXkBwjcrQ?hhpTzRGPP&-PunPwSPzzr,anL
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/untrained/init_char_s42/metrics.json

@@ -1,0 +1,70 @@
+[run] /root/char-lm-architectures/runs/sweeps/context/lstm_T512_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] lstm: 1,069,824 params (1,053,184 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.5012 | lr 1.00e-03 | 73.4k tok/s | 6s
+step    100 | loss 2.6505 | lr 2.00e-03 | 96.2k tok/s | 10s
+step    150 | loss 2.2519 | lr 1.98e-03 | 81.5k tok/s | 15s
+step    200 | loss 2.0789 | lr 1.96e-03 | 93.7k tok/s | 19s
+step    250 | loss 1.9478 | lr 1.93e-03 | 82.5k tok/s | 24s
+  eval step    250 | val_loss 1.9386 | val_bpb 2.7967 | acc 42.5% | 24s
+step    300 | loss 1.8519 | lr 1.90e-03 | 95.2k tok/s | 29s
+step    350 | loss 1.7609 | lr 1.87e-03 | 80.4k tok/s | 34s
+step    400 | loss 1.6817 | lr 1.83e-03 | 94.7k tok/s | 38s
+step    450 | loss 1.6410 | lr 1.79e-03 | 80.0k tok/s | 43s
+step    500 | loss 1.5765 | lr 1.74e-03 | 95.3k tok/s | 47s
+  eval step    500 | val_loss 1.6895 | val_bpb 2.4374 | acc 50.0% | 47s
+step    550 | loss 1.5438 | lr 1.69e-03 | 80.0k tok/s | 52s
+step    600 | loss 1.5154 | lr 1.63e-03 | 94.6k tok/s | 57s
+step    650 | loss 1.4882 | lr 1.57e-03 | 80.0k tok/s | 62s
+step    700 | loss 1.4659 | lr 1.51e-03 | 94.3k tok/s | 66s
+step    750 | loss 1.4438 | lr 1.45e-03 | 80.3k tok/s | 71s
+  eval step    750 | val_loss 1.5869 | val_bpb 2.2894 | acc 53.3% | 71s
+step    800 | loss 1.4325 | lr 1.38e-03 | 119.5k tok/s | 75s
+step    850 | loss 1.4100 | lr 1.31e-03 | 187.8k tok/s | 77s
+step    900 | loss 1.3940 | lr 1.24e-03 | 168.7k tok/s | 79s
+step    950 | loss 1.3884 | lr 1.17e-03 | 168.6k tok/s | 82s
+step   1000 | loss 1.3744 | lr 1.10e-03 | 236.0k tok/s | 84s
+  eval step   1000 | val_loss 1.5199 | val_bpb 2.1928 | acc 54.8% | 84s
+step   1050 | loss 1.3633 | lr 1.03e-03 | 240.3k tok/s | 85s
+step   1100 | loss 1.3562 | lr 9.61e-04 | 183.3k tok/s | 88s
+step   1150 | loss 1.3444 | lr 8.91e-04 | 81.0k tok/s | 93s
+step   1200 | loss 1.3371 | lr 8.23e-04 | 81.0k tok/s | 98s
+step   1250 | loss 1.3333 | lr 7.57e-04 | 81.7k tok/s | 103s
+  eval step   1250 | val_loss 1.5028 | val_bpb 2.1681 | acc 55.4% | 103s
+step   1300 | loss 1.3230 | lr 6.93e-04 | 81.0k tok/s | 108s
+step   1350 | loss 1.3173 | lr 6.31e-04 | 92.5k tok/s | 112s
+step   1400 | loss 1.3116 | lr 5.72e-04 | 81.2k tok/s | 117s
+step   1450 | loss 1.3121 | lr 5.17e-04 | 81.0k tok/s | 122s
+step   1500 | loss 1.3080 | lr 4.65e-04 | 81.6k tok/s | 127s
+  eval step   1500 | val_loss 1.4879 | val_bpb 2.1466 | acc 55.9% | 127s
+step   1550 | loss 1.3013 | lr 4.17e-04 | 80.8k tok/s | 132s
+step   1600 | loss 1.2978 | lr 3.73e-04 | 90.4k tok/s | 137s
+step   1650 | loss 1.2950 | lr 3.33e-04 | 81.0k tok/s | 142s
+step   1700 | loss 1.2948 | lr 2.99e-04 | 81.0k tok/s | 147s
+step   1750 | loss 1.2877 | lr 2.69e-04 | 81.6k tok/s | 152s
+  eval step   1750 | val_loss 1.4788 | val_bpb 2.1335 | acc 56.1% | 152s
+step   1800 | loss 1.2882 | lr 2.44e-04 | 81.0k tok/s | 157s
+step   1850 | loss 1.2844 | lr 2.25e-04 | 90.5k tok/s | 162s
+step   1900 | loss 1.2827 | lr 2.11e-04 | 80.8k tok/s | 167s
+step   1950 | loss 1.2797 | lr 2.03e-04 | 80.8k tok/s | 172s
+step   2000 | loss 1.2827 | lr 2.00e-04 | 81.5k tok/s | 177s
+  eval step   2000 | val_loss 1.4735 | val_bpb 2.1258 | acc 56.2% | 177s
+[final] val_loss 1.4735 | val_bpb 2.1258 | ppl 4.36 | acc 56.25% | 111,104 tokens, 1.00 bytes/token
+[sample]
+
+And like this best and give the crown and wife,
+The king and to the spiler to her known'st:
+And the state untainted the fallow of me.
+
+LADY ANNE:
+I can, but should have regainsed yourself.
+Now, grant love may be it, proud deposed
+Tale Angelo and offended in this love;
+When he were as will one of your enmity
+Which we will be thy indeed, in the grace,
+And fall a wife and courage in the side
+Of such 
+
+[done] metrics -> /root/char-lm-architectures/runs/sweeps/context/lstm_T512_s1337/metrics.json

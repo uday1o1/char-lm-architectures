@@ -189,6 +189,10 @@ def main():
     out["curve_minimum"] = {n: {"tokens": c["tokens"][int(np.argmin(c["mean"]))], "bpb": float(min(c["mean"])),
                                 "final": c["mean"][-1]} for n, c in out["curves"].items()}
     drop = vals(lambda n, s: metrics("lstm512_dropout", n, s)["val_bpb"], ("lstm_512_drop0.2", "lstm_512_drop0.3"))
+    out["lstm512_two_seed"] = {"drop0.3": float(np.mean([metrics("lstm512_dropout", "lstm_512_drop0.3", s)["val_bpb"]
+                                                         for s in (1337, 42)])),
+                               "lr0.5x": float(np.mean([metrics("lr_check", "lstm_512_lr0.5x", s)["val_bpb"]
+                                                        for s in (1337, 42)]))}
     out["dropout"] = {n: {**describe(v), "vs_lstm_512": paired(bpb["lstm_512"], v),
                           "vs_lstm": paired(bpb["lstm"], v)} for n, v in drop.items()}
     ctx = {}
@@ -200,6 +204,8 @@ def main():
     ctx["gpt_minus_lstm"] = {T: paired(np.array([ctx_metrics("lstm", T, s)["val_bpb"] for s in SEEDS]),
                                        np.array([ctx_metrics("gpt_modern", T, s)["val_bpb"] for s in SEEDS]))
                              for T in CONTEXT_T}
+    ctx["noise_floor"] = float(np.median([np.std([ctx_metrics(a, T, s)["val_bpb"] for s in SEEDS], ddof=1)
+                                          for a in ("lstm", "gpt_modern") for T in CONTEXT_T]))
     out["context"] = ctx
     lr = {}
     for n in CHAR_MODELS:                      # 2-seed means; None = the run diverged (no metrics.json)

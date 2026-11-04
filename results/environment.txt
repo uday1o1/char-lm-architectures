@@ -10,9 +10,12 @@ torch 2.6.0+cu124 cuda 12.4 cudnn 90100
 
 nanolm: 8418fc1bae85657190f11749483bf2e729b9702c (clean: yes)
 
-matplotlib==3.11.2
-pandas==3.1.1
-scipy==1.17.1
+numpy==2.2.2
+pyyaml==6.0.2
 sentencepiece==0.2.2
-tabulate==0.10.0
 tiktoken==0.14.0
+pandas==3.1.1
+matplotlib==3.11.2
+scipy==1.17.1
+tabulate==0.10.0
+pytest==9.2.0

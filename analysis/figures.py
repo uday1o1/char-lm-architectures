@@ -111,7 +111,7 @@ def context(S):
     ax.set_xticklabels([str(T) for T in Ts])
     ax.set_xlabel("training context length T (characters)")
     ax.set_ylabel("validation bits per byte")
-    ax.legend(fontsize=6.3, loc="upper center", bbox_to_anchor=(0.5, -0.22), ncol=2)
+    ax.legend(fontsize=6.3, loc="upper center", bbox_to_anchor=(0.5, -0.3), ncol=2)
     ax.set_title("(a) bpb against training length T", loc="left", fontsize=8.5)
     ax = axes[1]
     for n, lab in (("rnn", "RNN 2x256 (T=256)"), ("gru", "GRU 2x256 (T=256)"),

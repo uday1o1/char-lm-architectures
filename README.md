@@ -11,7 +11,7 @@ All training uses [nanolm](https://github.com/lkk688/DeepDataMiningLearning/tree
 
 ## Results
 
-All results are validation bits per byte (bpb; lower is better), as mean ± std over 5 seeds. Every model is trained on the same 16.4M characters (2000 steps × 32 × 256).
+All results are validation bits per byte (bpb; lower is better), as mean ± std over 5 seeds. Every model is trained on the same 16.4M characters (2000 steps × 8,192 characters: 32 windows of 256, or 8,192/T windows of length T in the `context` sweep).
 
 | model | parameters | bpb, nanolm learning rate | bpb, best learning rate (fresh seeds) |
 |---|---:|---:|---:|
@@ -24,14 +24,14 @@ All results are validation bits per byte (bpb; lower is better), as mean ± std 
 | Transformer, modern | 3,162,624 | 2.106 ± 0.010 | 2.115 ± 0.007 (2×) |
 
 - **Reproduction.** At nanolm's own settings, the first two seeds (1337, 42) reproduce the published table of nanolm's tutorial to within 0.01 bpb for each of its six models; the largest difference is 0.009, for the 2×512 LSTM.
-- **Robustness of the ranking.** The ranking of the top three models depends on the learning rate.
-  - At nanolm's learning rates, the modern Transformer is best.
-  - At each model's best learning rate from a grid of multiples of nanolm's rate (0.5× to 8× for most models, 0.25× to 2× for the 2×512 LSTM, up to 16× for the 2×256 LSTM; chosen on two seeds, then re-measured on five fresh seeds), the LSTM and GRU are 0.013 and 0.011 bpb lower than the modern Transformer. Neither difference is resolved (paired p = 0.10 and 0.06).
+- **Robustness of the ranking.** The modern Transformer's lead depends on the learning rate.
+  - At nanolm's learning rates, the modern Transformer is best, ahead of the LSTM (paired p = 0.018) and the GRU (p = 0.0003).
+  - At each model's best learning rate from a grid of multiples of nanolm's rate (0.5× to 8× for most models, 0.25× to 2× for the 2×512 LSTM, up to 16× for the 2×256 LSTM; chosen on two seeds, then re-measured on five fresh seeds), the LSTM and GRU are 0.013 and 0.011 bpb lower than the modern Transformer. Neither difference is resolved (paired p = 0.10 and 0.06), so at the best learning rates the order of the top three is open.
 - **What holds at either learning rate:**
-  - The vanilla RNN is last.
+  - The 2×256 vanilla RNN is last.
   - A gap of between 0.058 and 0.085 bpb to the GRU and the LSTM remains even when the RNN has as many parameters as the LSTM (RNN 2×512; paired p ≤ 0.0002 at both learning-rate settings).
   - The modern Transformer beats the GPT-2-style one.
-- **The larger LSTM overfits.** At nanolm's settings, the 2×512 LSTM reaches its best validation bpb (2.130) after 8.2M characters and then gets worse. Its gap between training and validation bpb is 0.77, against 0.35 for the 2×256 LSTM. With dropout 0.3 instead of 0.1 it reaches 2.072, below every model at nanolm's dropout (only this model's dropout was varied).
+- **The larger LSTM overfits.** At nanolm's settings, the 2×512 LSTM reaches its best validation bpb (2.130) after 8.2M characters and then gets worse. Its gap between training and validation bpb is 0.77, against 0.35 for the 2×256 LSTM. With dropout 0.3 instead of 0.1 it reaches 2.072, below every model at nanolm's dropout (only this model's dropout was varied, over 0.2 and 0.3, on the same seeds and validation split, so 2.072 is slightly optimistic).
 - **Context.** Scored on the same 16,384 characters with a fixed amount of context, every model gets almost all of its gain from context within the first 64 characters.
   - From 64 to 512 characters, the LSTM gains 0.0004 bpb and the modern Transformer 0.006.
   - The usual "bpb against training length T" curve falls mainly because evaluation windows of length T start with no context. At 64 characters of context, the difference between models trained on windows of 64 and 512 characters is not resolved (paired p = 0.85 for the LSTM, 0.32 for the modern Transformer).
@@ -50,7 +50,7 @@ All results are validation bits per byte (bpb; lower is better), as mean ± std 
 | `runs/sweeps/<sweep>/<run>_s<seed>/` | nanolm's record of every run: `config.yaml`, `meta.json` (git commit, device, command), `train_log.jsonl`, `eval_log.jsonl`, `metrics.json`, `sample.txt`, `stdout.log` (no checkpoints; the two diverged runs, `lr_check/gru_lr8x_s*`, have no `metrics.json` or `sample.txt`) |
 | `runs/sweeps/<sweep>/summary.{csv,md}`, `curves.png`, `bars.png`, `analyze_stdout.txt`, `sweep.yaml` | `python -m nanolm.analyze` output per sweep and its printed table, and the sweep file as nanolm.sweep copied it |
 | `analysis/` | analysis scripts (see below) and the gate-by-gate GRU (`gru_scratch.py`) |
-| `results/` | every analysis output as JSON; `summary.json` holds the numbers quoted above |
+| `results/` | every analysis output as JSON, and `environment.txt` (machine and package versions); `summary.json` holds the numbers quoted above |
 | `figures/` | all figures |
 | `tests/` | checks that `GRUScratch` matches `torch.nn.GRU` |
 
@@ -61,7 +61,7 @@ Requires Python 3.10 or later and one NVIDIA GPU. Training used one RTX 3090 wit
 ```bash
 bash scripts/setup.sh          # clone nanolm at commit 8418fc1 into external/, install requirements
 bash scripts/run_sweeps.sh     # train every run (finished runs are skipped), then nanolm.analyze per sweep
-bash scripts/run_analysis.sh   # GPU analyses that need the checkpoints -> results/*.json, attention maps
+bash scripts/run_analysis.sh   # analyses of the trained runs (GPU), the GRU check and tests -> results/*.json, attention maps
 source scripts/env.sh
 python analysis/summarize.py        # results/summary.json (no GPU)
 python analysis/figures.py          # figures/*.png except attention_*.png (no GPU)
@@ -88,4 +88,4 @@ python analysis/figures.py          # figures/*.png except attention_*.png (no G
 - **Data.** Tiny Shakespeare is a single 1.1M-character corpus with one validation split (its last 10%). The learning rates in `char_models_tuned` were chosen on that same split, which may flatter the tuned numbers slightly.
 - **Tuning.** Only the learning rate was tuned. Dropout and weight decay keep nanolm's per-architecture values, and dropout 0.3 helped the 2×512 LSTM by more than any learning rate.
 - **Scope.** All conclusions are at a budget of 16.4M characters and models of 0.28M to 4.24M parameters.
-- **Statistics.** p-values are paired t-tests over 5 seeds, with no correction for multiple comparisons.
+- **Statistics.** p-values are paired t-tests over 5 seeds. They are not corrected for multiple comparisons, except the Holm-adjusted values (`p_holm` in `results/summary.json`) for the six comparisons with the GPT-2-style Transformer, under which the 2×512 RNN and 2×512 LSTM differences are no longer below 0.05.

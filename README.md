@@ -25,7 +25,7 @@ The table gives validation bits per byte (bpb; lower is better) as mean ± std o
 
 - **Reproduction.** At nanolm's own settings, the first two seeds (1337, 42) reproduce the published table of nanolm's tutorial to within 0.01 bpb for each of its six models; the largest difference is 0.009, for the 2×512 LSTM.
 - **Robustness of the ranking.** The modern Transformer's lead depends on the learning rate.
-  - At nanolm's learning rates, the modern Transformer is best, ahead of the LSTM (paired p = 0.018) and the GRU (p = 0.0003).
+  - At nanolm's settings (its learning rates, dropout 0.1), the modern Transformer is best, ahead of the LSTM (paired p = 0.018) and the GRU (p = 0.0003).
   - At each model's best learning rate from a grid of multiples of nanolm's rate (0.5× to 8× for most models, 0.25× to 2× for the 2×512 LSTM, up to 16× for the 2×256 LSTM; chosen on two seeds, then re-measured on five fresh seeds), the LSTM and GRU are 0.013 and 0.011 bpb lower than the modern Transformer. Neither difference is resolved (paired p = 0.10 and 0.06), so at the best learning rates the order of the top three is open.
 - **What holds at either learning rate:**
   - The 2×256 vanilla RNN is last.

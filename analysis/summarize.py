@@ -173,7 +173,7 @@ def main():
     out["noise_floor"] = float(np.median([bpb[n].std(ddof=1) for n in CHAR_MODELS]))
     pairs = [("gpt_textbook", n) for n in CHAR_MODELS if n != "gpt_textbook"] + [
         ("rnn", "rnn_512"), ("rnn_512", "lstm"), ("rnn_512", "gru"), ("rnn", "gru"), ("gru", "lstm"),
-        ("lstm", "lstm_512"), ("lstm", "gpt_modern")]
+        ("lstm", "lstm_512"), ("lstm", "gpt_modern"), ("gru", "gpt_modern")]
     out["paired"] = {f"{a}|{b}": paired(bpb[a], bpb[b]) for a, b in pairs}
     # Holm's step-down correction over the six comparisons with the GPT-2-style Transformer
     fam = [k for k in out["paired"] if k.startswith("gpt_textbook|")]
@@ -231,8 +231,8 @@ def main():
     meta = json.loads((RUNS / "char_models" / "gpt_modern_s1337" / "meta.json").read_text())
     out["nanolm_git"] = meta["git"]
     out["torch"] = meta["torch"]
-    out["total_train_hours"] = sum(json.loads(p.read_text())["train_time_sec"]
-                                   for p in RUNS.rglob("metrics.json")) / 3600
+    out["total_train_hours"] = math.fsum(json.loads(p.read_text())["train_time_sec"]
+                                         for p in sorted(RUNS.rglob("metrics.json"))) / 3600
     out["n_runs"] = len(list(RUNS.rglob("metrics.json")))
     save("summary", out)
     print(json.dumps({k: out[k] for k in ("noise_floor", "devices", "n_runs", "total_train_hours")}, indent=1))

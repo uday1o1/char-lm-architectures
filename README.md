@@ -48,7 +48,7 @@ The table gives validation bits per byte (bpb; lower is better) as mean ± std o
 |---|---|
 | `configs/sweeps/` | the six sweep files: `char_models`, `char_models_tuned`, `lr_check`, `lstm512_dropout`, `context`, `untrained` |
 | `runs/sweeps/<sweep>/<run>_s<seed>/` | nanolm's record of every run: `config.yaml`, `meta.json` (git commit, device, command), `train_log.jsonl`, `eval_log.jsonl`, `metrics.json`, `sample.txt`, `stdout.log` (no checkpoints; the two diverged runs, `lr_check/gru_lr8x_s*`, have no `metrics.json` or `sample.txt`) |
-| `runs/sweeps/<sweep>/summary.{csv,md}`, `curves.png`, `bars.png`, `analyze_stdout.txt`, `sweep.yaml` | `python -m nanolm.analyze` output per sweep and its printed table, and the sweep file as nanolm.sweep copied it |
+| `runs/sweeps/<sweep>/summary.{csv,md}`, `curves.png`, `bars.png`, `analyze_stdout.txt`, `sweep.yaml` | `python -m nanolm.analyze` output per sweep and its printed table, and a copy of the sweep file (identical to the one in `configs/sweeps/`) |
 | `analysis/` | analysis scripts (see below) and the gate-by-gate GRU (`gru_scratch.py`) |
 | `results/` | every analysis output as JSON, and `environment.txt` (machine and package versions); `summary.json` holds the numbers quoted above |
 | `figures/` | all figures |
@@ -56,7 +56,7 @@ The table gives validation bits per byte (bpb; lower is better) as mean ± std o
 
 ## Reproducing
 
-Requires Python 3.11 or later and one NVIDIA GPU. Training used one RTX 3090 with bf16 autocast, PyTorch 2.6.0, CUDA 12.4 and Python 3.11; `requirements.txt` pins the package versions.
+Requires Python 3.11 to 3.13 (the range the pinned packages support) and one NVIDIA GPU. Training used one RTX 3090 with bf16 autocast, PyTorch 2.6.0, CUDA 12.4 and Python 3.11; `requirements.txt` pins the package versions.
 
 ```bash
 bash scripts/setup.sh          # clone nanolm at commit 8418fc1 into external/, install requirements

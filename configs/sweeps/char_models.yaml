@@ -1,8 +1,8 @@
 # RNN vs GRU vs LSTM vs Transformer on Tiny Shakespeare (characters). The six runs and their
 # settings are those of nanolm's configs/sweeps/01_char_models.yaml; rnn_512 is a vanilla RNN with about
 # the parameter count of the 2x256 LSTM, to separate gating from size.
-# Every run: 2000 steps x 32 x 256 = 16.4M training characters; the whole validation split scored in
-# complete 256-character windows.
+# Every run: 2000 steps x 32 x 256 = 16.4M training characters; validation bpb over the 435 complete
+# 256-character windows of the validation split (111,360 of its 111,540 characters).
 name: char_models
 base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/02_char_transformer.yaml
 out_dir: runs

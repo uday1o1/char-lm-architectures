@@ -1,6 +1,6 @@
 """How strongly the prediction at the end of a window depends on input characters k steps back:
 the norm of d(loss at the last position) / d(input embedding at position T-1-k), averaged over
-validation windows. For a vanilla RNN this gradient passes through k recurrent Jacobians and
+the first 256 validation windows. For a vanilla RNN this gradient passes through k recurrent Jacobians and
 should shrink quickly with k; gates (GRU, LSTM) and attention should keep it larger.
 
     python analysis/input_sensitivity.py

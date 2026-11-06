@@ -1,5 +1,5 @@
 # Context length for the 2x256 LSTM and the modern Transformer. Tokens per step stay at 8192
-# (batch_size = 8192 / seq_len), so every run sees the same 16.4M characters. seq_len 256 is
+# (batch_size = 8192 / seq_len), so every run sees the same number of characters (16.4M). seq_len 256 is
 # the char_models run of the same name (identical config) and is not repeated here.
 name: context
 base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/02_char_transformer.yaml

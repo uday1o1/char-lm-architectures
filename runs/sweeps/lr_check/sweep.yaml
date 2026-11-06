@@ -1,6 +1,6 @@
 # Learning-rate check: every char_models architecture across a grid of multiples of its
 # learning rate (0.5x to 8x; 0.25x to 2x for the 2x512 LSTM; up to 16x for the 2x256 LSTM, whose best
-# 2-seed value was at 8x), so that every best value lies inside the grid.
+# 2-seed value is at 8x), so that every best value lies inside the grid.
 name: lr_check
 base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/02_char_transformer.yaml
 out_dir: runs

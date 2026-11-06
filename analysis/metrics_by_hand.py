@@ -22,7 +22,7 @@ def by_hand(m: dict) -> dict:
 
 def main():
     worked = by_hand(metrics("char_models", "gpt_modern", 1337))
-    # the same identities on every trained run, to show they hold in general
+    # the same identities on every char_models run (35), to show they hold in general
     ppl_gaps, bpb_gaps = [], []
     for name in CHAR_MODELS:
         for s in SEEDS:

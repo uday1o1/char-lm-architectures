@@ -1,4 +1,4 @@
-"""Loss as a function of position inside the evaluation window, for every trained run.
+"""Loss as a function of position inside the evaluation window, for every char_models and context run.
 
 Evaluation (as in nanolm) cuts the validation text into non-overlapping windows of the training
 length T, and each window starts from an empty context. The prediction at position p (p = 0..T-1)
